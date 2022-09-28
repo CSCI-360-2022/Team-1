@@ -1,0 +1,3 @@
+* Must have access to internet and access to an internet browser on pc or laptop and some mobile devices.
+* Only Google Chrome is supported.
+* Must have a form of payment (credit debit or paypal)
