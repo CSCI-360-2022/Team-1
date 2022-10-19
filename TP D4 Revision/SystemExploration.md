@@ -30,6 +30,6 @@ The Receipt object is responsible for getting and setting the things it knows as
 
 # PaymentInfo
 ### What the object knows
-The PaymentInfo object is responsible for knowing a card number, expiration date, cvv, zip code, and any other info needed to carry out a transaction
+The PaymentInfo object is responsible for knowing a card number, expiration date, cvv, zip code, total cost, and any other info needed to carry out a transaction
 ### What the object does
 The PaymentInfo object is responsible for getting and setting the things it knows
