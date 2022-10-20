@@ -94,14 +94,14 @@
 | Post conditions | The ticket is checked if its a high seller or if its brand new and if it is the user is unable to purchase requested amount. If neither is true the requested amount is deemed fine to purchase and the user is not aware that the procedure even occurred |
 
 ## Contract C014: Confirm Purchase
-| Operation       | confirmPurchase(id)                                                                                                                                                              |
+| Operation       | confirmPurchase(id : int)                                                                                                                                                        |
 |-----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Cross Reference | Misuse Case- Accidental Purchase of a Ticket                                                                                                                                     |
 | Preconditions   | User must have already selected to purchase a ticket for some event                                                                                                              |
 | Post-Conditions | A confirmation option is sent to the UI of the user. The user selects whether or not they confirm the purchase of their ticket. If Yes: purchase(id). Else: cancel purchase(id). | 
 
 ## Contract CO15: Cancel Purchase
-| Operation       | cancelPurchase(id)                                                                                                |
+| Operation       | cancelPurchase(id : int)                                                                                          |
 |-----------------|-------------------------------------------------------------------------------------------------------------------|
 | Cross Reference | Misuse Case- Accidental Purchase of a Ticket                                                                      |
 | Preconditions   | User must have already selected to purchase a ticket for some event                                               |
