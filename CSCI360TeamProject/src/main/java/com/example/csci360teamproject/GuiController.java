@@ -84,4 +84,8 @@ public class GuiController {
         //Go back to index.html
         return "index";
     }
+
+    public boolean confirmLogin(String username, String password) {
+        return false;
+    }
 }
