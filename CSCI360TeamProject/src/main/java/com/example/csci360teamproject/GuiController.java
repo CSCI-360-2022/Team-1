@@ -40,9 +40,9 @@ public class GuiController {
         return "LoginPage";
     }
     @PostMapping("/logIn")
-    public <model> String logIn(@RequestParam(name="username") String username,
-                                @RequestParam(name="password") String password,
-                                Model model) {
+    public String logIn(@RequestParam(name="username") String username,
+                        @RequestParam(name="password") String password,
+                        Model model) {
         model.addAttribute("username", username);
         model.addAttribute("password", password);
         return "index";
@@ -87,5 +87,9 @@ public class GuiController {
 
     public boolean confirmLogin(String username, String password) {
         return false;
+    }
+
+    public String passwordHash(String password) {
+        return "";
     }
 }
