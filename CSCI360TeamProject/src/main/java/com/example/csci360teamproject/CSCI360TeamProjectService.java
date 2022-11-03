@@ -8,6 +8,7 @@ public interface CSCI360TeamProjectService {
     User findUser(int userId);
     List<User> listUsers();
     User updateUser(User user, int userId);
+    User findUserByUsername(String username);
     void deleteUserById(int userId);
     Event saveEvent(Event event);
     Event findEvent(int eventId);

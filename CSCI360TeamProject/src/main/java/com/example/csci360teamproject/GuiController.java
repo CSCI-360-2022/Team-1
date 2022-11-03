@@ -8,7 +8,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.time.LocalDate;
+import java.util.Locale;
 
 @Controller
 public class GuiController {
@@ -40,10 +44,15 @@ public class GuiController {
     @PostMapping("/logIn")
     public String logIn(@RequestParam(name="username") String username,
                         @RequestParam(name="password") String password,
-                        Model model) {
-        model.addAttribute("username", username);
-        model.addAttribute("password", password);
-        return "index";
+                        Model model ) {
+        if(confirmLogin(username, password, csci360TeamProjectService)) {
+            model.addAttribute("username", username);
+            model.addAttribute("password", password);
+            return "index";
+        }
+        else {
+            return "error";
+        }
     }
 
     @GetMapping("/displayRegisterPage")
@@ -82,12 +91,32 @@ public class GuiController {
         //Go back to index.html
         return "index";
     }
+    public boolean confirmLogin(String username, String password, CSCI360TeamProjectService service) {
+        User usr = service.findUserByUsername(username);
+        if(usr == null) {
+            return false;
+        }
+        if (password.equals(usr.getPassword()))
+        {
+            return true;
+        }
 
-    public boolean confirmLogin(String username, String password) {
+
+        //csci360TeamProjectService.findUser(21);
         return false;
     }
 
-    public String passwordHash(String password) {
-        return "";
+    public String passwordHash(String password) throws NoSuchAlgorithmException {
+        byte[] byteArr;
+        MessageDigest md = MessageDigest.getInstance("SHA-256");
+        byteArr = md.digest(password.getBytes(StandardCharsets.UTF_8));
+
+        String outString = "";
+        for(byte b : byteArr){
+            String st = String.format("%02X", b).toLowerCase();
+            outString += st;
+        }
+        return outString;
     }
+
 }
