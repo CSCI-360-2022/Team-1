@@ -40,10 +40,15 @@ public class GuiController {
     @PostMapping("/logIn")
     public String logIn(@RequestParam(name="username") String username,
                         @RequestParam(name="password") String password,
-                        Model model) {
-        model.addAttribute("username", username);
-        model.addAttribute("password", password);
-        return "index";
+                        Model model ) {
+        if(confirmLogin(username, password, csci360TeamProjectService)) {
+            model.addAttribute("username", username);
+            model.addAttribute("password", password);
+            return "index";
+        }
+        else {
+            return "error";
+        }
     }
 
     @GetMapping("/displayRegisterPage")
@@ -82,8 +87,18 @@ public class GuiController {
         //Go back to index.html
         return "index";
     }
+    public boolean confirmLogin(String username, String password, CSCI360TeamProjectService service) {
+        User usr = service.findUserByUsername(username);
+        if(usr == null) {
+            return false;
+        }
+        if (password.equals(usr.getPassword()))
+        {
+            return true;
+        }
 
-    public boolean confirmLogin(String username, String password) {
+
+        //csci360TeamProjectService.findUser(21);
         return false;
     }
 
