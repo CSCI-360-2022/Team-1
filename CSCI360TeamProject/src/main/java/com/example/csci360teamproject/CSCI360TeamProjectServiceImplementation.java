@@ -23,6 +23,12 @@ public class CSCI360TeamProjectServiceImplementation implements CSCI360TeamProje
     }
 
     @Override
+    public User findUserByUsername(String username)
+    {
+        return userRepository.findByUsername(username);
+    }
+
+    @Override
     public List<User> listUsers() {
         return (List<User>) userRepository.findAll();
     }

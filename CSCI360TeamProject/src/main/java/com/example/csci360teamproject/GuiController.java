@@ -84,6 +84,13 @@ public class GuiController {
     }
 
     public boolean confirmLogin(String username, String password) {
+        User usr = csci360TeamProjectService.findUserByUsername(username);
+        if (password.equals(usr.getPassword()))
+        {
+            return true;
+        }
+
+
         return false;
     }
 
