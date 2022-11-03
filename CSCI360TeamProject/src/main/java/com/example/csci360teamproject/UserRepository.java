@@ -6,4 +6,5 @@ import org.springframework.data.repository.CrudRepository;
 public interface UserRepository extends CrudRepository<User, Integer> {
     User findByUserID(int userID);
     User findByUsername(String username);
+    User deleteUserByUsername(String username);
 }

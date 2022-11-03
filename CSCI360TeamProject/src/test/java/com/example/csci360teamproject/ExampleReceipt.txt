@@ -1,0 +1,10 @@
+Transaction ID: 435673461
+Customer Name: Brooke
+Date of Purchase: 11/2/22
+Purchase Details:
+    Event Name: College of Charleston Graduation
+    When: 5/8/23
+    Location: College of Charleston Cistern Yard
+    Ticket Cost: $60.00
+Tax: $7.23
+Total Cost: $67.23
