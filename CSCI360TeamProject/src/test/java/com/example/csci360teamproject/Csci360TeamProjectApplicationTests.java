@@ -80,8 +80,8 @@ class Csci360TeamProjectApplicationTests {
     @Test
     public void logInTest() {
         GuiController gui = new GuiController();
-        Assertions.assertTrue(gui.confirmLogin("Brooke", "helloWorld"));
-        assertFalse(gui.confirmLogin("yeaMan69", "aVeryBadPassword"));
+        Assertions.assertTrue(gui.confirmLogin("Brooke", "helloWorld", csci360TeamProjectService));
+        assertFalse(gui.confirmLogin("yeaMan69", "aVeryBadPassword", csci360TeamProjectService));
     }
 
     @Test
@@ -99,6 +99,13 @@ class Csci360TeamProjectApplicationTests {
         Assertions.assertEquals("35e43dcf32c99b601158de7dae315a8939894ea45d6daa5dd1c31154e77c8805", gui.passwordHash("According to all known laws of aviation, there is no way that a bee should be able to fly. Its wings are too small to get its fat little body off the ground. The bee, of course, flies anyway. Because bees don’t care what humans think is impossible."));
 
     }
+
+//    @Test
+//    public void createUserTest() {
+//        User user = new User("Bobby", "somePassword", "coolEmail@email.com");
+//        csci360TeamProjectService.saveUser(user);
+//
+//    }
 }
 
 
