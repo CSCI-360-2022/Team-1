@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d5b9bbd9-0781-45f9-a6cb-81fc4683dcc6" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Brooke'sBranch" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
+      </map>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2FdZFubxshbZjnguEOgYDFFuPPG" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_directory_selection&quot;: &quot;/Users/brookeduvall/IdeaProjects/Team-1/CSCI360TeamProject/src/test/java&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/brookeduvall/IdeaProjects/Team-1/TP D6&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;7ba18b37b4363cbb7c476ca828be5c4d&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/TP D6" />
+      <recent name="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources/templates" />
+      <recent name="$PROJECT_DIR$/TP D5" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources/db" />
+      <recent name="$PROJECT_DIR$/TP D5" />
+      <recent name="$PROJECT_DIR$/TP D4 Revision" />
+      <recent name="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.example.csci360teamproject" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.Csci360TeamProjectApplicationTests.buildReceiptTest">
+    <configuration name="CSCI360Tests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CSCI360TeamProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.csci360teamproject.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.csci360teamproject" />
+      <option name="MAIN_CLASS_NAME" value="com.example.csci360teamproject.CSCI360Tests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CSCI360Tests.buildReceiptTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CSCI360TeamProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.csci360teamproject.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.csci360teamproject" />
+      <option name="MAIN_CLASS_NAME" value="com.example.csci360teamproject.CSCI360Tests" />
+      <option name="METHOD_NAME" value="buildReceiptTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Csci360TeamProjectApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CSCI360TeamProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.csci360teamproject.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.csci360teamproject" />
+      <option name="MAIN_CLASS_NAME" value="com.example.csci360teamproject.Csci360TeamProjectApplicationTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Csci360TeamProjectApplicationTests.buildReceiptTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CSCI360TeamProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.csci360teamproject.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.csci360teamproject" />
+      <option name="MAIN_CLASS_NAME" value="com.example.csci360teamproject.Csci360TeamProjectApplicationTests" />
+      <option name="METHOD_NAME" value="buildReceiptTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CSCI360TeamProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.csci360teamproject.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.csci360teamproject" />
+      <option name="MAIN_CLASS_NAME" value="com.example.csci360teamproject.Tests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Csci360TeamProjectApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="CSCI360TeamProject" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.csci360teamproject.Csci360TeamProjectApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.Tests" />
+        <item itemvalue="JUnit.CSCI360Tests.buildReceiptTest" />
+        <item itemvalue="JUnit.CSCI360Tests" />
+        <item itemvalue="JUnit.Csci360TeamProjectApplicationTests.buildReceiptTest" />
+        <item itemvalue="JUnit.Csci360TeamProjectApplicationTests" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d5b9bbd9-0781-45f9-a6cb-81fc4683dcc6" name="Changes" comment="" />
+      <created>1664823821657</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1664823821657</updated>
+      <workItem from="1664823827444" duration="18000" />
+      <workItem from="1664838734388" duration="2180000" />
+      <workItem from="1664898421172" duration="1401000" />
+      <workItem from="1665337416933" duration="17921000" />
+      <workItem from="1665698690792" duration="2504000" />
+      <workItem from="1666211959923" duration="13559000" />
+      <workItem from="1666647309921" duration="6809000" />
+      <workItem from="1666718641679" duration="1327000" />
+      <workItem from="1666832077844" duration="631000" />
+      <workItem from="1666833182271" duration="3211000" />
+      <workItem from="1666904552367" duration="7116000" />
+      <workItem from="1667225850919" duration="25448000" />
+    </task>
+    <task id="LOCAL-00001" summary="Very basic login stuff">
+      <created>1665424111344</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1665424111344</updated>
+    </task>
+    <task id="LOCAL-00002" summary="TP D4 Revision completed">
+      <created>1666213487397</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1666213487397</updated>
+    </task>
+    <task id="LOCAL-00003" summary="TP D5 Part 1">
+      <created>1666293922351</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1666293922351</updated>
+    </task>
+    <task id="LOCAL-00004" summary="TP D5 Part 2">
+      <created>1666294960801</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1666294960801</updated>
+    </task>
+    <task id="LOCAL-00005" summary="TP D5 Part 3">
+      <created>1666295380121</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1666295380121</updated>
+    </task>
+    <task id="LOCAL-00006" summary="TP D5 Part 4">
+      <created>1666296232958</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1666296232958</updated>
+    </task>
+    <task id="LOCAL-00007" summary="TP D5 Part 5 (final)">
+      <created>1666296745904</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1666296745904</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Database, Users, and Events">
+      <created>1666719532476</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1666719532476</updated>
+    </task>
+    <task id="LOCAL-00009" summary="TP D6 Submission">
+      <created>1666874628584</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1666874628584</updated>
+    </task>
+    <task id="LOCAL-00010" summary="JUnit Stuff">
+      <created>1666910097787</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1666910097788</updated>
+    </task>
+    <task id="LOCAL-00011" summary="10/27">
+      <created>1666914018012</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1666914018012</updated>
+    </task>
+    <task id="LOCAL-00012" summary="hashFunctionTest">
+      <created>1667400771439</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1667400771439</updated>
+    </task>
+    <task id="LOCAL-00013" summary="A big change to how database stuff works in the project">
+      <created>1667413569273</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1667413569273</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Got the test cases working.">
+      <created>1667442379755</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1667442379755</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Very basic login stuff" />
+    <MESSAGE value="TP D4 Revision completed" />
+    <MESSAGE value="TP D5 Part 1" />
+    <MESSAGE value="TP D5 Part 2" />
+    <MESSAGE value="TP D5 Part 3" />
+    <MESSAGE value="TP D5 Part 4" />
+    <MESSAGE value="TP D5 Part 5 (final)" />
+    <MESSAGE value="Database, Users, and Events" />
+    <MESSAGE value="TP D6 Submission" />
+    <MESSAGE value="JUnit Stuff" />
+    <MESSAGE value="10/27" />
+    <MESSAGE value="hashFunctionTest" />
+    <MESSAGE value="A big change to how database stuff works in the project" />
+    <MESSAGE value="Got the test cases working." />
+    <option name="LAST_COMMIT_MESSAGE" value="Got the test cases working." />
+  </component>
+</project>
