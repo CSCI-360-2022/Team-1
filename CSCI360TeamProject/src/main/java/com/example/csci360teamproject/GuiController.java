@@ -8,7 +8,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.time.LocalDate;
+import java.util.Locale;
 
 @Controller
 public class GuiController {
@@ -87,7 +91,17 @@ public class GuiController {
         return false;
     }
 
-    public String passwordHash(String password) {
-        return "";
+    public String passwordHash(String password) throws NoSuchAlgorithmException {
+        byte[] byteArr;
+        MessageDigest md = MessageDigest.getInstance("SHA-256");
+        byteArr = md.digest(password.getBytes(StandardCharsets.UTF_8));
+
+        String outString = "";
+        for(byte b : byteArr){
+            String st = String.format("%02X", b).toLowerCase();
+            outString += st;
+        }
+        return outString;
     }
+
 }
