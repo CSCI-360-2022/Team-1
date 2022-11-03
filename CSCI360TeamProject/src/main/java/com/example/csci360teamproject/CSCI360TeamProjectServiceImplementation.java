@@ -99,4 +99,5 @@ public class CSCI360TeamProjectServiceImplementation implements CSCI360TeamProje
     public void deleteEventById(int eventId) {
         eventRepository.deleteById(eventId);
     }
+
 }
