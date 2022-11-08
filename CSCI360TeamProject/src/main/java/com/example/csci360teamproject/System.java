@@ -2,7 +2,6 @@ package com.example.csci360teamproject;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -12,13 +11,15 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.time.LocalDate;
-import java.util.Locale;
 
 @Controller
-public class GuiController {
+public class System {
 
     @Autowired
-    private CSCI360TeamProjectService csci360TeamProjectService;
+    private Service csci360TeamProjectService;
+    private boolean loggedIn = false;
+
+
 //    @PostMapping("/addUser")
 //    public @ResponseBody String addNewUser(@RequestParam String username, @RequestParam String password, @RequestParam String email) {
 //        User user = new User(username, password, email);
@@ -42,12 +43,12 @@ public class GuiController {
         return "LoginPage";
     }
     @PostMapping("/logIn")
-    public String logIn(@RequestParam(name="username") String username,
-                        @RequestParam(name="password") String password,
-                        Model model ) {
+    public String login(@RequestParam(name="username") String username,
+                        @RequestParam(name="password") String password) {
         if(confirmLogin(username, password, csci360TeamProjectService)) {
-            model.addAttribute("username", username);
-            model.addAttribute("password", password);
+//            model.addAttribute("username", username);
+//            model.addAttribute("password", password);
+            loggedIn = true;
             return "index";
         }
         else {
@@ -61,14 +62,13 @@ public class GuiController {
     }
 
     @PostMapping("/registerAccount")
-    public String register(@RequestParam(name = "email") String email,
+    public String createUser(@RequestParam(name = "email") String email,
                            @RequestParam(name = "username") String username,
-                           @RequestParam(name = "password") String password,
-                           Model model) {
+                           @RequestParam(name = "password") String password) {
         User user = new User(username, password, email);
         csci360TeamProjectService.saveUser(user);
-        model.addAttribute("username", username);
-        model.addAttribute("password", password);
+//        model.addAttribute("username", username);
+//        model.addAttribute("password", password);
         return "index";
     }
     //Used to show AddEvent.html
@@ -91,8 +91,8 @@ public class GuiController {
         //Go back to index.html
         return "index";
     }
-    public boolean confirmLogin(String username, String password, CSCI360TeamProjectService service) {
-        User usr = service.findUserByUsername(username);
+    public boolean confirmLogin(String username, String password, Service service) {
+        User usr = service.findUser(username);
         if(usr == null) {
             return false;
         }
@@ -111,12 +111,39 @@ public class GuiController {
         MessageDigest md = MessageDigest.getInstance("SHA-256");
         byteArr = md.digest(password.getBytes(StandardCharsets.UTF_8));
 
-        String outString = "";
+        StringBuilder outString = new StringBuilder();
         for(byte b : byteArr){
             String st = String.format("%02X", b).toLowerCase();
-            outString += st;
+            outString.append(st);
         }
-        return outString;
+        return outString.toString();
     }
 
+    public String search(String searchTerm, String[] tags) {
+        return null;
+    }
+
+    public String selectEvent(int eventId) {
+        return null;
+    }
+
+    public String startPurchase(int eventId) {
+        return null;
+    }
+
+    public String confirmPurchase() {
+        return null;
+    }
+
+    public String purchase(int cardNumber, LocalDate expDate, int cvv, String name, String address, String city, String state, String country, int zipCode) {
+        return null;
+    }
+
+    public void emailReceipt(String receipt, String email) {
+
+    }
+
+    public String cancelPurchase() {
+        return null;
+    }
 }

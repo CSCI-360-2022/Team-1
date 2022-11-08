@@ -6,7 +6,7 @@ import java.time.format.DateTimeFormatter;
 
 
 public class Receipt {
-    private CSCI360TeamProjectService csci360TeamProjectService;
+    private Service csci360TeamProjectService;
     private double paymentTotal;
     private int eventId;
     private int customerId;
@@ -17,7 +17,7 @@ public class Receipt {
         paymentTotal = 0;
     }
 
-    public Receipt(double paymentTotal, int eventId, int customerId, LocalDate date, long transactionId, CSCI360TeamProjectService csci360TeamProjectService) {
+    public Receipt(double paymentTotal, int eventId, int customerId, LocalDate date, long transactionId, Service csci360TeamProjectService) {
         this.paymentTotal = paymentTotal;
         this.eventId = eventId;
         this.customerId = customerId;

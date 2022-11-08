@@ -1,40 +1,36 @@
 package com.example.csci360teamproject;
 
+import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
-public class CSCI360TeamProjectServiceImplementation implements CSCI360TeamProjectService {
+@org.springframework.stereotype.Service
+public class Service {
     @Autowired
     private UserRepository userRepository;
     @Autowired
     private EventRepository eventRepository;
 
-    @Override
-    public User saveUser(User user) {
-        return userRepository.save(user);
+    public void saveUser(User user) {
+        userRepository.save(user);
     }
 
-    @Override
     public User findUser(int userId) {
         return userRepository.findById(userId).orElseThrow();
     }
 
-    @Override
-    public User findUserByUsername(String username)
+
+    public User findUser(String username)
     {
         return userRepository.findByUsername(username);
     }
 
-    @Override
     public List<User> listUsers() {
         return (List<User>) userRepository.findAll();
     }
 
-    @Override
-    public User updateUser(User user, int userId) {
+    public User updateUser(@NotNull User user, int userId) {
         User oldUser = userRepository.findById(userId).orElseThrow();
         if(user.getUsername() != null && !"".equalsIgnoreCase(user.getUsername())) {
             oldUser.setUsername(user.getUsername());
@@ -48,28 +44,27 @@ public class CSCI360TeamProjectServiceImplementation implements CSCI360TeamProje
         return userRepository.save(oldUser);
     }
 
-    @Override
     public void deleteUserById(int userId) {
         userRepository.deleteById(userId);
     }
 
-    @Override
-    public Event saveEvent(Event event) {
-        return eventRepository.save(event);
+    public void saveEvent(Event event) {
+        eventRepository.save(event);
     }
 
-    @Override
     public Event findEvent(int eventId) {
         return eventRepository.findById(eventId).orElseThrow();
     }
 
-    @Override
+    public List<Event> findEvents(String searchTerm, String[] tags) {
+        return null;
+    }
+
     public List<Event> listEvents() {
         return (List<Event>) eventRepository.findAll();
     }
 
-    @Override
-    public Event updateEvent(Event event, int eventId) {
+    public Event updateEvent(@NotNull Event event, int eventId) {
         Event oldEvent = eventRepository.findById(eventId).orElseThrow();
         if(event.getEventName() != null && !"".equalsIgnoreCase(event.getEventName())) {
             oldEvent.setEventName(event.getEventName());
@@ -95,7 +90,6 @@ public class CSCI360TeamProjectServiceImplementation implements CSCI360TeamProje
         return eventRepository.save(oldEvent);
     }
 
-    @Override
     public void deleteEventById(int eventId) {
         eventRepository.deleteById(eventId);
     }

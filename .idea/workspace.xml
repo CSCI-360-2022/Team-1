@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5b9bbd9-0781-45f9-a6cb-81fc4683dcc6" name="Changes" comment="" />
+    <list default="true" id="d5b9bbd9-0781-45f9-a6cb-81fc4683dcc6" name="Changes" comment="Got the test cases working.">
+      <change afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/main/java/com/example/csci360teamproject/PaymentInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/main/java/com/example/csci360teamproject/PaymentSystem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TP D8/OperationContracts rev5.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_2_22__9_41_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_2_22__9_41_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSCI360TeamProject/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CSCI360TeamProject/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSCI360TeamProject/src/main/java/com/example/csci360teamproject/CSCI360TeamProjectService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSCI360TeamProject/src/main/java/com/example/csci360teamproject/CSCI360TeamProjectServiceImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/main/java/com/example/csci360teamproject/Service.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSCI360TeamProject/src/main/java/com/example/csci360teamproject/GuiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/main/java/com/example/csci360teamproject/System.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSCI360TeamProject/src/main/java/com/example/csci360teamproject/Receipt.java" beforeDir="false" afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/main/java/com/example/csci360teamproject/Receipt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSCI360TeamProject/src/test/java/com/example/csci360teamproject/Csci360TeamProjectApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/test/java/com/example/csci360teamproject/Csci360TeamProjectApplicationTests.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,9 +25,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="HTML File" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -61,33 +73,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_directory_selection&quot;: &quot;/Users/brookeduvall/IdeaProjects/Team-1/CSCI360TeamProject/src/test/java&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/brookeduvall/IdeaProjects/Team-1/TP D6&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;7ba18b37b4363cbb7c476ca828be5c4d&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_directory_selection": "/Users/brookeduvall/IdeaProjects/Team-1/CSCI360TeamProject/src/test/java",
+    "last_opened_file_path": "C:/Users/bmduv/IdeaProjects/Team-1/TP D8",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "spring.configuration.checksum": "7ba18b37b4363cbb7c476ca828be5c4d"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\bmduv\IdeaProjects\Team-1\TP D8" />
       <recent name="$PROJECT_DIR$/TP D6" />
       <recent name="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources/templates" />
       <recent name="$PROJECT_DIR$/TP D5" />
@@ -107,7 +120,7 @@
       <module name="CSCI360TeamProject" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.csci360teamproject.*" />
+          <option name="PATTERN" value="com.example.csci360teamproject.Service" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -122,7 +135,7 @@
       <module name="CSCI360TeamProject" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.csci360teamproject.*" />
+          <option name="PATTERN" value="com.example.csci360teamproject.Service" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -138,7 +151,7 @@
       <module name="CSCI360TeamProject" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.csci360teamproject.*" />
+          <option name="PATTERN" value="com.example.csci360teamproject.Service" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -153,7 +166,7 @@
       <module name="CSCI360TeamProject" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.csci360teamproject.*" />
+          <option name="PATTERN" value="com.example.csci360teamproject.Service" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -169,7 +182,7 @@
       <module name="CSCI360TeamProject" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.csci360teamproject.*" />
+          <option name="PATTERN" value="com.example.csci360teamproject.Service" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -217,6 +230,7 @@
       <workItem from="1666833182271" duration="3211000" />
       <workItem from="1666904552367" duration="7116000" />
       <workItem from="1667225850919" duration="25448000" />
+      <workItem from="1667914167987" duration="6902000" />
     </task>
     <task id="LOCAL-00001" summary="Very basic login stuff">
       <created>1665424111344</created>

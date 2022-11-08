@@ -21,7 +21,7 @@ class Csci360TeamProjectApplicationTests {
     }
 
     @Autowired
-    private CSCI360TeamProjectService csci360TeamProjectService;
+    private Service csci360TeamProjectService;
     @Test
     public void createReceipt() {
         Receipt receipt = new Receipt();
@@ -79,7 +79,7 @@ class Csci360TeamProjectApplicationTests {
 //    }
     @Test
     public void logInTest() {
-        GuiController gui = new GuiController();
+        System gui = new System();
         Assertions.assertTrue(gui.confirmLogin("Brooke", "helloWorld", csci360TeamProjectService));
         assertFalse(gui.confirmLogin("yeaMan69", "aVeryBadPassword", csci360TeamProjectService));
     }
@@ -87,7 +87,7 @@ class Csci360TeamProjectApplicationTests {
     @Test
     public void hashFunctionTest() throws NoSuchAlgorithmException {
         //String passwordHash(String password) in GuiController
-        GuiController gui = new GuiController();
+        System gui = new System();
         Assertions.assertEquals("2e99758548972a8e8822ad47fa1017ff72f06f3ff6a016851f45c398732bc50c", gui.passwordHash("this is a test"));
         Assertions.assertNotEquals("", gui.passwordHash("this is a test"));
         Assertions.assertNotEquals("this is a test", gui.passwordHash("this is a test"));
