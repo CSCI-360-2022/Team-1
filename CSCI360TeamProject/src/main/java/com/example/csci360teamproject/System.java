@@ -32,10 +32,10 @@ public class System {
         return csci360TeamProjectService.listUsers();
     }
 
-    @GetMapping("/hello")
-    public String helloWorld() {
-        return "HelloWorld";
-    }
+//    @GetMapping("/hello")
+//    public String helloWorld() {
+//        return "HelloWorld";
+//    }
 
 
     @GetMapping("/displayLoginPage")
@@ -64,8 +64,8 @@ public class System {
     @PostMapping("/registerAccount")
     public String createUser(@RequestParam(name = "email") String email,
                            @RequestParam(name = "username") String username,
-                           @RequestParam(name = "password") String password) {
-        User user = new User(username, password, email);
+                           @RequestParam(name = "password") String password) throws NoSuchAlgorithmException {
+        User user = new User(username, passwordHash(password), email);
         csci360TeamProjectService.saveUser(user);
 //        model.addAttribute("username", username);
 //        model.addAttribute("password", password);

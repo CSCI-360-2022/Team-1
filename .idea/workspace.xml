@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5b9bbd9-0781-45f9-a6cb-81fc4683dcc6" name="Changes" comment="Made changes to Sequence Diagrams.pdf, OperationContracts rev5.md, and did some code refactoring to make our code look more like what we originally planned." />
+    <list default="true" id="d5b9bbd9-0781-45f9-a6cb-81fc4683dcc6" name="Changes" comment="Added a test case for adding a new user">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/febd962c-fa43-4440-806a-b7a8e151a943.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/febd962c-fa43-4440-806a-b7a8e151a943.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSCI360TeamProject/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CSCI360TeamProject/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSCI360TeamProject/src/main/java/com/example/csci360teamproject/System.java" beforeDir="false" afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/main/java/com/example/csci360teamproject/System.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSCI360TeamProject/src/main/java/com/example/csci360teamproject/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/main/java/com/example/csci360teamproject/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSCI360TeamProject/src/test/java/com/example/csci360teamproject/Csci360TeamProjectApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/test/java/com/example/csci360teamproject/Csci360TeamProjectApplicationTests.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,7 +47,7 @@
       <map>
         <entry key="com.haulmont.jpb.jpaInspector" value="false" />
         <entry key="com.haulmont.jpb.jpaPalette" value="false" />
-        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
       </map>
     </option>
   </component>
@@ -61,32 +69,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_directory_selection": "/Users/brookeduvall/IdeaProjects/Team-1/CSCI360TeamProject/src/test/java",
-    "last_opened_file_path": "C:/Users/bmduv/IdeaProjects/Team-1/TP D8",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "SDKs",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "spring.configuration.checksum": "7ba18b37b4363cbb7c476ca828be5c4d"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_directory_selection&quot;: &quot;/Users/brookeduvall/IdeaProjects/Team-1/CSCI360TeamProject/src/test/java&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/bmduv/IdeaProjects/Team-1/TP D8&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;7ba18b37b4363cbb7c476ca828be5c4d&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\bmduv\IdeaProjects\Team-1\TP D8" />
@@ -360,6 +368,7 @@
     <MESSAGE value="A big change to how database stuff works in the project" />
     <MESSAGE value="Got the test cases working." />
     <MESSAGE value="Made changes to Sequence Diagrams.pdf, OperationContracts rev5.md, and did some code refactoring to make our code look more like what we originally planned." />
-    <option name="LAST_COMMIT_MESSAGE" value="Made changes to Sequence Diagrams.pdf, OperationContracts rev5.md, and did some code refactoring to make our code look more like what we originally planned." />
+    <MESSAGE value="Added a test case for adding a new user" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a test case for adding a new user" />
   </component>
 </project>

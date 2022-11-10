@@ -22,6 +22,8 @@ class Csci360TeamProjectApplicationTests {
 
     @Autowired
     private Service csci360TeamProjectService;
+    @Autowired
+    private System system;
     @Test
     public void createReceipt() {
         Receipt receipt = new Receipt();
@@ -98,6 +100,25 @@ class Csci360TeamProjectApplicationTests {
         Assertions.assertEquals("95f82d7b761cd80c7a75ffc9b30a535bad667a3115bd751aa2db2e95ab92214f", gui.passwordHash("testingIsAnImportantPartofAnyCodingProject"));
         Assertions.assertEquals("35e43dcf32c99b601158de7dae315a8939894ea45d6daa5dd1c31154e77c8805", gui.passwordHash("According to all known laws of aviation, there is no way that a bee should be able to fly. Its wings are too small to get its fat little body off the ground. The bee, of course, flies anyway. Because bees don’t care what humans think is impossible."));
 
+    }
+
+    @Test
+    public void emailTest() throws Exception {
+        System gui = new System();
+        Receipt newReceipt = new Receipt(67.23, 13, 21, LocalDate.of(2022, 11, 2), 435673461, csci360TeamProjectService);
+        //gui.emailReceipt(newReceipt, "bmduvall10@gmail.com", csci360TeamProjectService);
+    }
+
+    @Test
+    public void createUserTest() throws NoSuchAlgorithmException {
+        //System gui = new System();
+        User newUser = new User("CoolGuy25", system.passwordHash("notASecurePassword"), "coolguy25@yahoo.com");
+        User badUser = new User("CoolGuy25", "notASecurePassword", "coolguy25@yahoo.com");
+        system.createUser("coolguy25@yahoo.com", "CoolGuy25", "notASecurePassword");
+        User retrievedUser = csci360TeamProjectService.findUser("CoolGuy25");
+        Assertions.assertEquals(newUser, retrievedUser);
+        Assertions.assertNotEquals(badUser, retrievedUser);
+        csci360TeamProjectService.deleteUserById(retrievedUser.getUserID());
     }
 
 //    @Test
