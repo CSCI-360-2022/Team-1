@@ -2,6 +2,7 @@ package com.example.csci360teamproject;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -40,15 +41,16 @@ public class System {
 
     @GetMapping("/displayLoginPage")
     public String displayLoginPage() {
-        return "LoginPage";
+        return "loginPage";
     }
     @PostMapping("/logIn")
     public String login(@RequestParam(name="username") String username,
-                        @RequestParam(name="password") String password) {
+                        @RequestParam(name="password") String password, Model model) {
         if(confirmLogin(username, password, csci360TeamProjectService)) {
 //            model.addAttribute("username", username);
 //            model.addAttribute("password", password);
             loggedIn = true;
+            model.addAttribute("loggedIn", loggedIn);
             return "index";
         }
         else {
@@ -58,7 +60,7 @@ public class System {
 
     @GetMapping("/displayRegisterPage")
     public String displayRegisterPage() {
-        return "RegisterPage";
+        return "registerPage";
     }
 
     @PostMapping("/registerAccount")

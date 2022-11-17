@@ -3,11 +3,7 @@
   <component name="dataSourceStorageLocal" created-in="IU-222.4167.29">
     <data-source name="@db-mysql-nyc1-92064-do-user-12637190-0.b.db.ondigitalocean.com" uuid="febd962c-fa43-4440-806a-b7a8e151a943">
       <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MYSQL" exact-version="0" />
-      <schema-mapping>
-        <introspection-scope>
-          <node kind="schema" negative="1" />
-        </introspection-scope>
-      </schema-mapping>
+      <schema-mapping />
     </data-source>
   </component>
 </project>

@@ -1,0 +1,39 @@
+<link href="https://fonts.googleapis.com/css?family=JetBrains+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../static/styles/css/styles.css" th:href="@{/styles/css/styles.css}">
+<script>
+  function openMenu() {
+    var element = document.getElementById("menuPopup")
+    if(element.style.display === "none") {
+      element.style.display = "block";
+    }
+    else {
+      element.style.display = "none";
+    }
+    //document.getElementById("menuPopup").style.display = "block";
+  }
+</script>
+<div id=e8_78>
+  <div id="e34_115"></div>
+  <span  id="e34_116">To Register, Please Enter the Following Information:</span>
+  <form action="/registerAccount" method="post" id="registerForm">
+    <label for="usernameRegisterPage" id="usernameTextRegisterPage">Username: </label>
+    <input type="text" id="usernameRegisterPage" name="username"><br>
+    <label for="passwordRegisterPage" id="passwordTextRegisterPage">Password: </label>
+    <input type="text" id="passwordRegisterPage" name="password"><br>
+    <label for="emailRegisterPage" id="emailTextRegisterPage">Email: </label>
+    <input type="text" id="emailRegisterPage" name="email"> <br>
+    <input type="submit" id="registerSubmit" value="Register">
+  </form>
+  <div id=MenuBar>
+    <span  id="Team1">Team 1</span>
+    <div id=SearchBarWhole>
+      <div id="SearchBar"></div>
+      <div id="SearchImage"></div>
+    </div>
+    <button  id="ProfileImage" class="profilePopup" th:onclick="openMenu()"></button>
+    <div class="menuPopup" id="menuPopup">
+      <a href="loginPage.html" th:href="@{http://localhost:8080/displayLoginPage}">Login</a><br>
+      <a href="registerPage.html" th:href="@{http://localhost:8080/displayRegisterPage}">Register</a>
+    </div>
+  </div>
+</div>
