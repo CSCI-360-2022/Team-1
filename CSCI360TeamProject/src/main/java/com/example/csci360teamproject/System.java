@@ -66,12 +66,29 @@ public class System {
     @PostMapping("/registerAccount")
     public String createUser(@RequestParam(name = "email") String email,
                            @RequestParam(name = "username") String username,
-                           @RequestParam(name = "password") String password) throws NoSuchAlgorithmException {
-        User user = new User(username, passwordHash(password), email);
-        csci360TeamProjectService.saveUser(user);
-//        model.addAttribute("username", username);
-//        model.addAttribute("password", password);
-        return "index";
+                           @RequestParam(name = "password") String password, Model model) {
+        User duplicate = csci360TeamProjectService.findUser(username);
+        if(duplicate == null && password.length() >= 15 && password.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[-+_!@#$%^&*.,?~]).+$")) {
+            User user = new User(username, passwordHash(password), email);
+            csci360TeamProjectService.saveUser(user);
+            //        model.addAttribute("username", username);
+            //        model.addAttribute("password", password);
+            return "index";
+        }
+        else {
+            String errorMessage = "";
+            if(duplicate != null) {
+                errorMessage += "User already exists with specified username. ";
+            }
+            if(password.length() < 15) {
+                errorMessage += "Password is not 15 characters long.";
+            }
+            if(!password.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[-+_!@#$%^&*.,?~]).+$")) {
+                errorMessage += "Password does not match character requirements.";
+            }
+            model.addAttribute("error", errorMessage);
+            return "error";
+        }
     }
     //Used to show AddEvent.html
     @GetMapping("/displayAddEventPage")
