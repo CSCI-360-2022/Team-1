@@ -46,7 +46,7 @@ public class System {
     @PostMapping("/logIn")
     public String login(@RequestParam(name="username") String username,
                         @RequestParam(name="password") String password, Model model) {
-        if(confirmLogin(username, password, csci360TeamProjectService)) {
+        if(confirmLogin(username, passwordHash(password), csci360TeamProjectService)) {
 //            model.addAttribute("username", username);
 //            model.addAttribute("password", password);
             loggedIn = true;
@@ -108,17 +108,23 @@ public class System {
         return false;
     }
 
-    public String passwordHash(String password) throws NoSuchAlgorithmException {
+    public String passwordHash(String password) {
         byte[] byteArr;
-        MessageDigest md = MessageDigest.getInstance("SHA-256");
-        byteArr = md.digest(password.getBytes(StandardCharsets.UTF_8));
+        try {
+            MessageDigest md = MessageDigest.getInstance("SHA-256");
+            byteArr = md.digest(password.getBytes(StandardCharsets.UTF_8));
 
-        StringBuilder outString = new StringBuilder();
-        for(byte b : byteArr){
-            String st = String.format("%02X", b).toLowerCase();
-            outString.append(st);
+            StringBuilder outString = new StringBuilder();
+            for (byte b : byteArr) {
+                String st = String.format("%02X", b).toLowerCase();
+                outString.append(st);
+            }
+            return outString.toString();
         }
-        return outString.toString();
+        catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
     public String search(String searchTerm, String[] tags) {
