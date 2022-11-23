@@ -11,13 +11,6 @@
 
 <!--              <script type="text/javascript" th:src="@{/static/styles/javascript/javascriptStuff.js}" src="/static/styles/javascript/javascriptStuff.js"></script>-->
               <script  th:inline="javascript">
-                  function greetWorld() {
-                      alert("hello world")
-                  }
-
-                  function salute(name) {
-                      alert("hello: " + name)
-                  }
                   function openMenu() {
                       const element = document.getElementById("menuPopup")
                       if(element.style.display === "none") {
@@ -37,13 +30,13 @@
                     <div id=SearchBarWhole>
                         <div  id="SearchBar"></div>
                         <div  id="SearchImage"></div>
+
                     </div>
                     <button th:onclick="openMenu()" id="ProfileImage" class="profilePopup" onclick="openMenu()"></button>
                     <div class="menuPopup" id="menuPopup">
                         <a href="loginPage.html" th:href="@{http://localhost:8080/displayLoginPage}">Login</a><br>
                         <a href="registerPage.html" th:href="@{http://localhost:8080/displayRegisterPage}">Register</a>
                     </div>
-
                 </div>
                 <div id=e29_91>
                     <div  id="e29_84"></div>

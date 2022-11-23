@@ -4,31 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5b9bbd9-0781-45f9-a6cb-81fc4683dcc6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_activation_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_mail_mail_1_4_7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources/static/images/profileimage.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources/static/images/searchiconimage.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources/static/styles/css/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources/static/styles/javascript/javascriptStuff.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources/templates/Header.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources/templates/HomePageHtml.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources/templates/ProductPage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources/templates/loginPage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources/templates/oldindex.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources/templates/registerPage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources/templates/test.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TP D9/ProductPage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TP D9/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TP D9/loginPage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TP D9/registerPage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TP D9/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/febd962c-fa43-4440-806a-b7a8e151a943.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/febd962c-fa43-4440-806a-b7a8e151a943.xml" afterDir="false" />
+    <list default="true" id="d5b9bbd9-0781-45f9-a6cb-81fc4683dcc6" name="Changes" comment="TP D9 Submission">
+      <change afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources/templates/productDetails.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources/templates/purchaseConfirmation.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources/templates/purchaseScreen.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources/templates/purchaseSucesss.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources/templates/searchResults.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_2_22,_9_41_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_11_2_22__9_41_PM__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSCI360TeamProject/src/main/java/com/example/csci360teamproject/System.java" beforeDir="false" afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/main/java/com/example/csci360teamproject/System.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources/templates/LoginPage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources/templates/RegisterPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources/templates/oldRegisterPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources/static/styles/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources/static/styles/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,8 +26,8 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -355,7 +340,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667921545320</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="TP D9 Submission">
+      <created>1668693945543</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1668693945543</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -390,6 +382,7 @@
     <MESSAGE value="Got the test cases working." />
     <MESSAGE value="Made changes to Sequence Diagrams.pdf, OperationContracts rev5.md, and did some code refactoring to make our code look more like what we originally planned." />
     <MESSAGE value="Added a test case for adding a new user" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a test case for adding a new user" />
+    <MESSAGE value="TP D9 Submission" />
+    <option name="LAST_COMMIT_MESSAGE" value="TP D9 Submission" />
   </component>
 </project>
