@@ -122,7 +122,8 @@ public class System {
     }
 
     public String search(String searchTerm, String[] tags) {
-        return null;
+        csci360TeamProjectService.findEvents(searchTerm, tags);
+        return "searchResults.html";
     }
 
     public String selectEvent(int eventId) {

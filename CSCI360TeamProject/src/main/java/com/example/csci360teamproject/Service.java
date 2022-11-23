@@ -3,7 +3,10 @@ package com.example.csci360teamproject;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 @org.springframework.stereotype.Service
 public class Service {
@@ -57,7 +60,24 @@ public class Service {
     }
 
     public List<Event> findEvents(String searchTerm, String[] tags) {
-        return null;
+        List<Event> events = new ArrayList<>();
+        int id = -1;
+        try {
+            id = Integer.parseInt(searchTerm);
+            Optional<Event> event = eventRepository.findById(id);
+            if(event.isPresent()) {
+                events.add(event.get());
+                return events;
+            }
+            else {
+                return null;
+            }
+        }
+        catch (NumberFormatException e) {
+            String tagsAsString = Arrays.toString(tags);
+            java.lang.System.out.println(tagsAsString);
+            return eventRepository.findEventsByEventNameOrDescriptionContainsIgnoreCaseOrDescriptionContainsIgnoreCaseOrderByEventName(searchTerm,searchTerm,tagsAsString);
+        }
     }
 
     public List<Event> listEvents() {
