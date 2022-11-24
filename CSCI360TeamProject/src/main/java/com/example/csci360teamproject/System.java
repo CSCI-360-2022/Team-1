@@ -175,7 +175,8 @@ public class System {
 
     }
 
-    public String cancelPurchase() {
-        return null;
+    @GetMapping("/events/purchase/cancel/{eventId}")
+    public String cancelPurchase(@PathVariable int eventId, Model model) {
+        return selectEvent(eventId, model);
     }
 }

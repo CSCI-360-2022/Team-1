@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5b9bbd9-0781-45f9-a6cb-81fc4683dcc6" name="Changes" comment="Fixed password requirements">
+    <list default="true" id="d5b9bbd9-0781-45f9-a6cb-81fc4683dcc6" name="Changes" comment="Fixed Login Bug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSCI360TeamProject/src/main/java/com/example/csci360teamproject/System.java" beforeDir="false" afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/main/java/com/example/csci360teamproject/System.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources/templates/error.html" beforeDir="false" afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources/templates/error.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSCI360TeamProject/src/test/java/com/example/csci360teamproject/Csci360TeamProjectApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/test/java/com/example/csci360teamproject/Csci360TeamProjectApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +28,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="22-update-the-register-function-to-account-for-mvp-requirements" />
+        <entry key="$PROJECT_DIR$" value="32-fix-bug-where-user-has-to-sign-in-using-hashed-password-versus-hashing-the-password-entered" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -227,7 +229,6 @@
       <workItem from="1666904552367" duration="7116000" />
       <workItem from="1667225850919" duration="25448000" />
       <workItem from="1667914167987" duration="7292000" />
-      <workItem from="1669299120307" duration="315000" />
     </task>
     <task id="LOCAL-00001" summary="Very basic login stuff">
       <created>1665424111344</created>
@@ -348,14 +349,7 @@
       <option name="project" value="LOCAL" />
       <updated>1669229105397</updated>
     </task>
-    <task id="LOCAL-00018" summary="Fixed password requirements">
-      <created>1669234204722</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1669234204722</updated>
-    </task>
-    <option name="localTasksCounter" value="19" />
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -392,7 +386,17 @@
     <MESSAGE value="Added a test case for adding a new user" />
     <MESSAGE value="TP D9 Submission" />
     <MESSAGE value="Fixed Login Bug" />
-    <MESSAGE value="Fixed password requirements" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed password requirements" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed Login Bug" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/CSCI360TeamProject/src/test/java/com/example/csci360teamproject/Csci360TeamProjectApplicationTests.java</url>
+          <line>130</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
