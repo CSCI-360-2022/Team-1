@@ -3,15 +3,13 @@ package com.example.csci360teamproject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.time.LocalDate;
+import java.util.List;
 
 @Controller
 public class System {
@@ -121,8 +119,10 @@ public class System {
         return outString.toString();
     }
 
-    public String search(String searchTerm, String[] tags) {
-        csci360TeamProjectService.findEvents(searchTerm, tags);
+    @GetMapping("/search/{searchTerm}")
+    public String search(@PathVariable String searchTerm, String[] tags, Model model) {
+        List<Event> eventList = csci360TeamProjectService.findEvents(searchTerm, tags);
+        model.addAttribute("eventList", eventList);
         return "searchResults.html";
     }
 
