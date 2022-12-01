@@ -75,8 +75,8 @@ public class Service {
         }
         catch (NumberFormatException e) {
             String tagsAsString = Arrays.toString(tags);
-            java.lang.System.out.println(tagsAsString);
-            return eventRepository.findEventsByEventNameOrDescriptionContainsIgnoreCaseOrDescriptionContainsIgnoreCaseOrderByEventName(searchTerm,searchTerm,tagsAsString);
+            //java.lang.System.out.println(tagsAsString);
+            return eventRepository.findEventsByEventNameContainsIgnoreCaseOrDescriptionContainsIgnoreCaseOrDescriptionContainsIgnoreCaseOrderByEventName(searchTerm,searchTerm,tagsAsString);
         }
     }
 
