@@ -44,7 +44,7 @@ public class System {
     @PostMapping("/logIn")
     public String login(@RequestParam(name="username") String username,
                         @RequestParam(name="password") String password, Model model) {
-        if(confirmLogin(username, password, csci360TeamProjectService)) {
+        if(confirmLogin(username, passwordHash(password), csci360TeamProjectService)) {
 //            model.addAttribute("username", username);
 //            model.addAttribute("password", password);
             loggedIn = true;
@@ -64,12 +64,29 @@ public class System {
     @PostMapping("/registerAccount")
     public String createUser(@RequestParam(name = "email") String email,
                            @RequestParam(name = "username") String username,
-                           @RequestParam(name = "password") String password) throws NoSuchAlgorithmException {
-        User user = new User(username, passwordHash(password), email);
-        csci360TeamProjectService.saveUser(user);
-//        model.addAttribute("username", username);
-//        model.addAttribute("password", password);
-        return "index";
+                           @RequestParam(name = "password") String password, Model model) {
+        User duplicate = csci360TeamProjectService.findUser(username);
+        if(duplicate == null && password.length() >= 15 && password.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[-+_!@#$%^&*.,?~]).+$")) {
+            User user = new User(username, passwordHash(password), email);
+            csci360TeamProjectService.saveUser(user);
+            //        model.addAttribute("username", username);
+            //        model.addAttribute("password", password);
+            return "index";
+        }
+        else {
+            String errorMessage = "";
+            if(duplicate != null) {
+                errorMessage += "User already exists with specified username. ";
+            }
+            if(password.length() < 15) {
+                errorMessage += "Password is not 15 characters long.";
+            }
+            if(!password.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[-+_!@#$%^&*.,?~]).+$")) {
+                errorMessage += "Password does not match character requirements.";
+            }
+            model.addAttribute("error", errorMessage);
+            return "error";
+        }
     }
     //Used to show AddEvent.html
     @GetMapping("/displayAddEventPage")
@@ -106,17 +123,23 @@ public class System {
         return false;
     }
 
-    public String passwordHash(String password) throws NoSuchAlgorithmException {
+    public String passwordHash(String password) {
         byte[] byteArr;
-        MessageDigest md = MessageDigest.getInstance("SHA-256");
-        byteArr = md.digest(password.getBytes(StandardCharsets.UTF_8));
+        try {
+            MessageDigest md = MessageDigest.getInstance("SHA-256");
+            byteArr = md.digest(password.getBytes(StandardCharsets.UTF_8));
 
-        StringBuilder outString = new StringBuilder();
-        for(byte b : byteArr){
-            String st = String.format("%02X", b).toLowerCase();
-            outString.append(st);
+            StringBuilder outString = new StringBuilder();
+            for (byte b : byteArr) {
+                String st = String.format("%02X", b).toLowerCase();
+                outString.append(st);
+            }
+            return outString.toString();
         }
-        return outString.toString();
+        catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
     @GetMapping("/search/{searchTerm}")
@@ -126,8 +149,18 @@ public class System {
         return "searchResults.html";
     }
 
-    public String selectEvent(int eventId) {
-        return null;
+    @GetMapping("/events/{eventId}")
+    public String selectEvent(@PathVariable int eventId, Model model) {
+        Event event = csci360TeamProjectService.findEvent(eventId);
+        model.addAttribute("eventName", event.getEventName());
+        model.addAttribute("date", event.getDate());
+        model.addAttribute("seatsLeft", event.getSeatsLeft());
+        model.addAttribute("location", event.getLocation());
+        model.addAttribute("description", event.getDescription());
+        model.addAttribute("price", event.getPrice());
+        model.addAttribute("tags", event.getTags());
+        model.addAttribute("eventID", eventId);
+        return "productDetails";
     }
 
     public String startPurchase(int eventId) {

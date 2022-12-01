@@ -88,7 +88,7 @@ class Csci360TeamProjectApplicationTests {
     }
 
     @Test
-    public void hashFunctionTest() throws NoSuchAlgorithmException {
+    public void hashFunctionTest() {
         //String passwordHash(String password) in GuiController
         System gui = new System();
         Assertions.assertEquals("2e99758548972a8e8822ad47fa1017ff72f06f3ff6a016851f45c398732bc50c", gui.passwordHash("this is a test"));
@@ -111,11 +111,11 @@ class Csci360TeamProjectApplicationTests {
     }
 
     @Test
-    public void createUserTest() throws NoSuchAlgorithmException {
+    public void createUserTest() {
         //System gui = new System();
         User newUser = new User("CoolGuy25", system.passwordHash("notASecurePassword"), "coolguy25@yahoo.com");
         User badUser = new User("CoolGuy25", "notASecurePassword", "coolguy25@yahoo.com");
-        system.createUser("coolguy25@yahoo.com", "CoolGuy25", "notASecurePassword");
+        system.createUser("coolguy25@yahoo.com", "CoolGuy25", "notASecurePassword", null);
         User retrievedUser = csci360TeamProjectService.findUser("CoolGuy25");
         Assertions.assertEquals(newUser, retrievedUser);
         Assertions.assertNotEquals(badUser, retrievedUser);
