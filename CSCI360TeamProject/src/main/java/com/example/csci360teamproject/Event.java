@@ -38,9 +38,9 @@ public class Event {
         this.location = location;
     }
     //Getters and Setters
-//    public int getEventID() {
-//        return eventID;
-//    }
+    public int getEventID() {
+        return eventID;
+    }
 //
 //    public void setEventID(int eventID) {
 //        this.eventID = eventID;

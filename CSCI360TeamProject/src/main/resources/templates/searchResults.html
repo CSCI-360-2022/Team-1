@@ -17,7 +17,7 @@
   <span  id="e29_94">Spring 2023</span>
   <div id="eventListing">
     <div th:each="event: ${eventList}">
-      <p th:text="${event.getEventName()}"></p>
+      <a th:text="${event.getEventName()}" th:href="@{/events/{eventId}(eventId=${event.getEventID()})}"></a>
       <p id="eventSubtext" th:text="'Location: ' + ${event.getLocation()} + '; Date: ' + ${event.getDate()}"></p>
       <br>
     </div>
