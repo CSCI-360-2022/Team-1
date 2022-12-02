@@ -51,6 +51,7 @@ public class System {
             return "index";
         }
         else {
+            model.addAttribute("error", "Login Information Incorrect");
             return "error";
         }
     }
@@ -70,6 +71,7 @@ public class System {
             csci360TeamProjectService.saveUser(user);
             //        model.addAttribute("username", username);
             //        model.addAttribute("password", password);
+            loggedIn = true;
             return "index";
         }
         else {
@@ -151,17 +153,22 @@ public class System {
 
     @GetMapping("/events/purchase/{eventId}")
     public String startPurchase(@PathVariable int eventId, Model model) {
-        double taxRate = .07;
-        Event event = csci360TeamProjectService.findEvent(eventId);
-        model.addAttribute("price", event.getPrice());
-        model.addAttribute("tax", event.getPrice()*taxRate);
-        model.addAttribute("total", event.getPrice()+(event.getPrice()*taxRate));
-        model.addAttribute("eventName", event.getEventName());
-        model.addAttribute("date", event.getDate());
-        model.addAttribute("location", event.getLocation());
-        model.addAttribute("description", event.getDescription());
-        model.addAttribute("eventID", eventId);
-        return "purchaseScreen";
+        if(loggedIn) {
+            double taxRate = .07;
+            Event event = csci360TeamProjectService.findEvent(eventId);
+            model.addAttribute("price", event.getPrice());
+            model.addAttribute("tax", event.getPrice()*taxRate);
+            model.addAttribute("total", event.getPrice()+(event.getPrice()*taxRate));
+            model.addAttribute("eventName", event.getEventName());
+            model.addAttribute("date", event.getDate());
+            model.addAttribute("location", event.getLocation());
+            model.addAttribute("description", event.getDescription());
+            model.addAttribute("eventID", eventId);
+            return "purchaseScreen";
+        }
+        else {
+            return displayLoginPage();
+        }
     }
 
     public String confirmPurchase() {

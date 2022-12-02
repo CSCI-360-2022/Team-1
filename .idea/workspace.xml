@@ -26,7 +26,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="32-fix-bug-where-user-has-to-sign-in-using-hashed-password-versus-hashing-the-password-entered" />
+        <entry key="$PROJECT_DIR$" value="17-create-the-confirmpurchase-function" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -198,10 +198,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.Csci360TeamProjectApplicationTests.searchEventTest" />
         <item itemvalue="JUnit.Tests" />
         <item itemvalue="JUnit.CSCI360Tests.buildReceiptTest" />
         <item itemvalue="JUnit.CSCI360Tests" />
+        <item itemvalue="JUnit.Csci360TeamProjectApplicationTests.searchEventTest" />
         <item itemvalue="JUnit.Csci360TeamProjectApplicationTests.buildReceiptTest" />
       </list>
     </recent_temporary>
@@ -347,7 +347,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669229105397</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Fixed the UI as well as made the event appear on the page">
+      <created>1669997650896</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1669997650896</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
