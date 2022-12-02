@@ -3,10 +3,7 @@ package com.example.csci360teamproject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
@@ -156,8 +153,12 @@ public class System {
         return null;
     }
 
-    public String confirmPurchase() {
-        return null;
+    @GetMapping("/purchase/{eventID}/confirm")
+    public String confirmPurchase(@PathVariable int eventID, Model model) {
+        Event event = csci360TeamProjectService.findEvent(eventID);
+        model.addAttribute("eventName", event.getEventName());
+        model.addAttribute("price", event.getPrice());
+        return "purchaseConfirmation";
     }
 
     public String purchase(int cardNumber, LocalDate expDate, int cvv, String name, String address, String city, String state, String country, int zipCode) {
