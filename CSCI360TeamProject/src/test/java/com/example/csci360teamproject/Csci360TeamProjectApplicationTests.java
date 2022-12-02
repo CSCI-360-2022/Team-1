@@ -11,6 +11,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.security.NoSuchAlgorithmException;
 import java.time.LocalDate;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
@@ -121,12 +122,13 @@ class Csci360TeamProjectApplicationTests {
         csci360TeamProjectService.deleteUserById(retrievedUser.getUserID());
     }
 
-//    @Test
-//    public void createUserTest() {
-//        User user = new User("Bobby", "somePassword", "coolEmail@email.com");
-//        csci360TeamProjectService.saveUser(user);
-//
-//    }
+    @Test
+    public void searchEventTest() {
+        List<Event> basketball = csci360TeamProjectService.findEvents("Basketball", new String[0]);
+        String[] tags = new String[1];
+        tags[0] = "Sports";
+        List<Event> sports = csci360TeamProjectService.findEvents(null, tags);
+    }
 }
 
 

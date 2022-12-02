@@ -10,7 +10,7 @@
     <div id="e41_130"></div>
     <div id="e41_131"></div>
   </div>
-  <div id="e22_98"></div><span  id="e22_118">Event Id: 354782457</span>
+  <div id="e22_98"></div><span  id="e22_118" th:text="'Event Id: ' + ${eventID}"></span>
   <div id=e22_121>
     <div id="e22_119"></div><span  id="e22_120">Official Cofc</span>
   </div>
@@ -21,10 +21,15 @@
     <div id="e22_127"></div><span  id="e22_128">Spring 2023</span>
   </div>
   <div id=e22_134>
-    <div id="e22_129"></div><span  id="e22_130">Price: $20.00</span>
+    <div id="e22_129"></div><span  id="e22_130" th:text="'Price: ' + ${price}"></span>
     <div id="e22_132"></div><span  id="e22_133">Buy Now</span>
   </div>
   <div id=e22_115>
-    <div id="e22_97"></div><span  id="e22_100">College of Charleston Graduation</span><span  id="e22_110">Time: 12:00 PM</span><span  id="e22_112">Location: College of Charleston Cistern Yard</span><span  id="e22_113">College of Charleston graduation celebrates our student’s achievements through out their journey through our education system. Enjoy a nice 4 hours of sitting watching people move across a stage. Your seats will be cramped and you will die of heat as we hold the graduation ceremony near the begining of summer.</span><span  id="e22_109">Seats Left: 100</span><span  id="e22_107">When: 5/8/23</span>
+    <div id="e22_97"></div>
+    <span  id="e22_100" th:text="${eventName}"></span>
+    <span  id="e22_112" th:text="'Location: ' + ${location}"></span>
+    <span  id="e22_113" th:text="${description}"></span>
+    <span  id="e22_109" th:text="'Seats Left: ' + ${seatsLeft}"></span>
+    <span  id="e22_107" th:text="'When: ' + ${date}"></span>
   </div>
 </div>

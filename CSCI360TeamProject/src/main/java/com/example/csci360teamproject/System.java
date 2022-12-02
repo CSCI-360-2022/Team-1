@@ -9,6 +9,7 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.time.LocalDate;
+import java.util.List;
 
 @Controller
 public class System {
@@ -143,12 +144,25 @@ public class System {
         }
     }
 
-    public String search(String searchTerm, String[] tags) {
-        return null;
+    @GetMapping("/search/{searchTerm}")
+    public String search(@PathVariable String searchTerm, String[] tags, Model model) {
+        List<Event> eventList = csci360TeamProjectService.findEvents(searchTerm, tags);
+        model.addAttribute("eventList", eventList);
+        return "searchResults.html";
     }
 
-    public String selectEvent(int eventId) {
-        return null;
+    @GetMapping("/events/{eventId}")
+    public String selectEvent(@PathVariable int eventId, Model model) {
+        Event event = csci360TeamProjectService.findEvent(eventId);
+        model.addAttribute("eventName", event.getEventName());
+        model.addAttribute("date", event.getDate());
+        model.addAttribute("seatsLeft", event.getSeatsLeft());
+        model.addAttribute("location", event.getLocation());
+        model.addAttribute("description", event.getDescription());
+        model.addAttribute("price", event.getPrice());
+        model.addAttribute("tags", event.getTags());
+        model.addAttribute("eventID", eventId);
+        return "productDetails";
     }
 
     @GetMapping("/events/purchase/{eventId}")
