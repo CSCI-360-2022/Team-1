@@ -144,8 +144,8 @@ public class System {
         }
     }
 
-    @GetMapping("/search/{searchTerm}")
-    public String search(@PathVariable String searchTerm, String[] tags, Model model) {
+    @GetMapping("/search")
+    public String search(@RequestParam (name = "searchTerm") String searchTerm, String[] tags, Model model) {
         List<Event> eventList = csci360TeamProjectService.findEvents(searchTerm, tags);
         model.addAttribute("eventList", eventList);
         return "searchResults.html";
