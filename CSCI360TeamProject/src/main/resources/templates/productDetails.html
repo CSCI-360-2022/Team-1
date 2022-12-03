@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="../static/styles/css/styles.css" th:href="@{/styles/css/styles.css}">
 <div id=e8_79>
   <div id="e62_26"></div>
-  <div id=e41_126><span  id="e41_127">Team 1</span>
+  <div id=e41_126><span  class="team1">Team 1</span>
     <div id=e41_128>
       <div id="e41_129"></div>
     </div>
@@ -21,7 +21,7 @@
     <div id="e22_127"></div><span  id="e22_128">Spring 2023</span>
   </div>
   <div id=e22_134>
-    <div id="e22_129"></div><span  id="e22_130" th:text="'Price: ' + ${price}"></span>
+    <div id="e22_129"></div><span  id="e22_130" th:text="'Price: $' + ${price}"></span>
     <div id="e22_132"></div><a  id="e22_133" th:href="@{/events/purchase/{eventId}(eventId=${eventID})}">Buy Now</a>
   </div>
   <div id=e22_115>

@@ -9,6 +9,7 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 @Controller
@@ -115,14 +116,10 @@ public class System {
         if(usr == null) {
             return false;
         }
-        if (password.equals(usr.getPassword()))
-        {
-            return true;
-        }
+        return password.equals(usr.getPassword());
 
 
         //csci360TeamProjectService.findUser(21);
-        return false;
     }
 
     public String passwordHash(String password) {
@@ -148,18 +145,19 @@ public class System {
     public String search(@RequestParam (name = "searchTerm") String searchTerm, String[] tags, Model model) {
         List<Event> eventList = csci360TeamProjectService.findEvents(searchTerm, tags);
         model.addAttribute("eventList", eventList);
-        return "searchResults.html";
+        return "searchResults";
     }
 
     @GetMapping("/events/{eventId}")
     public String selectEvent(@PathVariable int eventId, Model model) {
         Event event = csci360TeamProjectService.findEvent(eventId);
         model.addAttribute("eventName", event.getEventName());
-        model.addAttribute("date", event.getDate());
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("eeee MMMM d yyyy");
+        model.addAttribute("date", event.getDate().format(formatter));
         model.addAttribute("seatsLeft", event.getSeatsLeft());
         model.addAttribute("location", event.getLocation());
         model.addAttribute("description", event.getDescription());
-        model.addAttribute("price", event.getPrice());
+        model.addAttribute("price", String.format("%.2f", event.getPrice()));
         model.addAttribute("tags", event.getTags());
         model.addAttribute("eventID", eventId);
         return "productDetails";
@@ -170,9 +168,9 @@ public class System {
         if(loggedIn) {
             double taxRate = .07;
             Event event = csci360TeamProjectService.findEvent(eventId);
-            model.addAttribute("price", event.getPrice());
-            model.addAttribute("tax", event.getPrice()*taxRate);
-            model.addAttribute("total", event.getPrice()+(event.getPrice()*taxRate));
+            model.addAttribute("price", String.format("%.2f", event.getPrice()));
+            model.addAttribute("tax", String.format("%.2f", event.getPrice()*taxRate));
+            model.addAttribute("total", String.format("%.2f", event.getPrice()+(event.getPrice()*taxRate)));
             model.addAttribute("eventName", event.getEventName());
             model.addAttribute("date", event.getDate());
             model.addAttribute("location", event.getLocation());
@@ -191,10 +189,6 @@ public class System {
 
     public String purchase(int cardNumber, LocalDate expDate, int cvv, String name, String address, String city, String state, String country, int zipCode) {
         return null;
-    }
-
-    public void emailReceipt(String receipt, String email) {
-
     }
 
     public String cancelPurchase() {

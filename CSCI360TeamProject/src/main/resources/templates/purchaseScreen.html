@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="../static/styles/css/styles.css" th:href="@{/styles/css/styles.css}">
 <div id=e60_12>
   <div id="e62_27"></div>
-  <div id=e60_13><span  id="e60_14">Team 1</span>
+  <div id=e60_13><span  class="team1">Team 1</span>
     <div id=e60_15>
       <div id="e60_16"></div>
     </div>
@@ -13,12 +13,15 @@
   <div id="e60_20"></div>
   <div id="e60_22"></div>
   <div id="e60_21"></div>
-  <div id="e60_33"></div><span  id="e60_24">Price: $20.00</span><span  id="e60_25">Tax: $1.44</span><span  id="e60_26">Total: $21.44</span><span  id="e60_27">COFC Graduation</span><span  id="e60_29">When: 5/8/23
-Location: Cistern
-Seats Left: 100</span>
+  <div id="e60_33"></div>
+  <span  id="e60_24" th:text="'Price: $' + ${price}"></span>
+  <span  id="e60_25" th:text="'Tax: $' + ${tax}"></span>
+  <span  id="e60_26" th:text="'Total: $' + ${total}"></span>
+  <span  id="e60_27" th:text="${eventName}"></span>
+  <span  id="e60_29" th:text="'When: ' + ${date} + 'Location: ' + ${location} + 'Seats Left: ' + ${seatsLeft}"></span>
   <div id="e60_31"></div>
-  <span  id="e60_30">College of Charleston graduation celebrates our student’s achievements through out their journey through our education system. Enjoy a nice 4 hours of sitting watching people move across a stage. Your seats will be cramped and you will die of heat as we hold the graduation ceremony near the begining of summer.</span>
-  <span  id="e60_32">Event ID:  354782457</span>
+  <span  id="e60_30" th:text="${description}"></span>
+  <span  id="e60_32" th:text="'Event ID: ' + ${eventID}"></span>
   <div id="e60_40"></div>
   <div id="e60_48"></div>
   <div id="e60_47"></div>
