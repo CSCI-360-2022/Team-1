@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5b9bbd9-0781-45f9-a6cb-81fc4683dcc6" name="Changes" comment="Did some front end coding of the event search">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSCI360TeamProject/src/main/java/com/example/csci360teamproject/EventRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/main/java/com/example/csci360teamproject/EventRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSCI360TeamProject/src/main/java/com/example/csci360teamproject/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/main/java/com/example/csci360teamproject/Service.java" afterDir="false" />
-    <list default="true" id="d5b9bbd9-0781-45f9-a6cb-81fc4683dcc6" name="Changes" comment="Fixed password requirements">
+    <list default="true" id="d5b9bbd9-0781-45f9-a6cb-81fc4683dcc6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSCI360TeamProject/src/main/java/com/example/csci360teamproject/System.java" beforeDir="false" afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/main/java/com/example/csci360teamproject/System.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources/static/styles/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources/static/styles/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources/templates/loginPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources/templates/loginPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources/templates/registerPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources/templates/registerPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources/templates/searchResults.html" beforeDir="false" afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources/templates/searchResults.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +62,9 @@
         <option name="useMavenConfig" value="true" />
       </MavenGeneralSettings>
     </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectId" id="2FdZFubxshbZjnguEOgYDFFuPPG" />
   <component name="ProjectLevelVcsManager">
@@ -347,14 +350,6 @@
       <option name="project" value="LOCAL" />
       <updated>1668693945543</updated>
     </task>
-    <task id="LOCAL-00017" summary="Did some front end coding of the event search">
-      <created>1669860031121</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1669860031121</updated>
-    </task>
-    <option name="localTasksCounter" value="18" />
     <task id="LOCAL-00017" summary="Fixed Login Bug">
       <created>1669229105397</created>
       <option name="number" value="00017" />
@@ -362,12 +357,6 @@
       <option name="project" value="LOCAL" />
       <updated>1669229105397</updated>
     </task>
-    <task id="LOCAL-00018" summary="Fixed the UI as well as made the event appear on the page">
-      <created>1669997650896</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1669997650896</updated>
     <task id="LOCAL-00018" summary="Fixed password requirements">
       <created>1669234204722</created>
       <option name="number" value="00018" />
@@ -424,8 +413,5 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <MESSAGE value="Fixed Login Bug" />
-    <MESSAGE value="Fixed password requirements" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed password requirements" />
   </component>
 </project>
