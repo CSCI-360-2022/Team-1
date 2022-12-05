@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5b9bbd9-0781-45f9-a6cb-81fc4683dcc6" name="Changes" comment="">
+    <list default="true" id="d5b9bbd9-0781-45f9-a6cb-81fc4683dcc6" name="Changes" comment="Menu bar functionality on most pages.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSCI360TeamProject/src/main/java/com/example/csci360teamproject/System.java" beforeDir="false" afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/main/java/com/example/csci360teamproject/System.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources/static/styles/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources/static/styles/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources/templates/loginPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources/templates/loginPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources/templates/registerPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources/templates/registerPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources/templates/searchResults.html" beforeDir="false" afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources/templates/searchResults.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -364,7 +360,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669234204722</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Menu bar functionality on most pages.">
+      <created>1670168782429</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1670168782429</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -401,7 +404,8 @@
     <MESSAGE value="Added a test case for adding a new user" />
     <MESSAGE value="TP D9 Submission" />
     <MESSAGE value="Did some front end coding of the event search" />
-    <option name="LAST_COMMIT_MESSAGE" value="Did some front end coding of the event search" />
+    <MESSAGE value="Menu bar functionality on most pages." />
+    <option name="LAST_COMMIT_MESSAGE" value="Menu bar functionality on most pages." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

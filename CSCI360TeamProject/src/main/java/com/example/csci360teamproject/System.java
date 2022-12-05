@@ -18,6 +18,8 @@ public class System {
     @Autowired
     private Service csci360TeamProjectService;
     private boolean loggedIn = false;
+    private int demand = 0;
+    private double lastTimeStamp = 0;
 
 
 //    @PostMapping("/addUser")
@@ -165,18 +167,35 @@ public class System {
 
     @GetMapping("/events/purchase/{eventId}")
     public String startPurchase(@PathVariable int eventId, Model model) {
+        double currentTime = java.lang.System.currentTimeMillis();
+        int demandMax = 5;
+        int demandPentalty = 5;
+        if (currentTime - lastTimeStamp > demandPentalty * 1000) {
+            demand = 0;
+            lastTimeStamp = currentTime;
+        }
+        else {
+            demand++;
+            lastTimeStamp = currentTime;
+        }
         if(loggedIn) {
-            double taxRate = .07;
-            Event event = csci360TeamProjectService.findEvent(eventId);
-            model.addAttribute("price", String.format("%.2f", event.getPrice()));
-            model.addAttribute("tax", String.format("%.2f", event.getPrice()*taxRate));
-            model.addAttribute("total", String.format("%.2f", event.getPrice()+(event.getPrice()*taxRate)));
-            model.addAttribute("eventName", event.getEventName());
-            model.addAttribute("date", event.getDate());
-            model.addAttribute("location", event.getLocation());
-            model.addAttribute("description", event.getDescription());
-            model.addAttribute("eventID", eventId);
-            return "purchaseScreen";
+            if(demand < demandMax) {
+                double taxRate = .07;
+                Event event = csci360TeamProjectService.findEvent(eventId);
+                model.addAttribute("price", String.format("%.2f", event.getPrice()));
+                model.addAttribute("tax", String.format("%.2f", event.getPrice() * taxRate));
+                model.addAttribute("total", String.format("%.2f", event.getPrice() + (event.getPrice() * taxRate)));
+                model.addAttribute("eventName", event.getEventName());
+                model.addAttribute("date", event.getDate());
+                model.addAttribute("location", event.getLocation());
+                model.addAttribute("description", event.getDescription());
+                model.addAttribute("eventID", eventId);
+                return "purchaseScreen";
+            }
+            else {
+                model.addAttribute("error", "This ticket is in hot demand currently. Please try again in another " + demandPentalty  + " seconds");
+                return "error";
+            }
         }
         else {
             return displayLoginPage();
@@ -194,4 +213,5 @@ public class System {
     public String cancelPurchase() {
         return null;
     }
+
 }
