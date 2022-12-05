@@ -190,6 +190,7 @@ public class System {
                 model.addAttribute("location", event.getLocation());
                 model.addAttribute("description", event.getDescription());
                 model.addAttribute("eventID", eventId);
+                model.addAttribute("seatsLeft", event.getSeatsLeft());
                 return "purchaseScreen";
             }
             else {

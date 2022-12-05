@@ -1073,10 +1073,10 @@
 	height:76px;
 	position:absolute;
 	left:911px;
-	top:172px;
+	top:150px;
 	font-family:JetBrains Mono, serif;
 	text-align:left;
-	font-size: 30px;
+	font-size: 25px;
 	letter-spacing:0;
 }
 #e60_29 {
@@ -1085,7 +1085,31 @@
 	height:160px;
 	position:absolute;
 	left:911px;
-	top:216px;
+	top:250px;
+	font-family:JetBrains Mono, serif;
+	text-align:left;
+	font-size:20px;
+	letter-spacing:0;
+}
+#locationPurchaseScreen {
+	color:rgba(0, 0, 0, 1);
+	width:353px;
+	height:160px;
+	position:absolute;
+	left:911px;
+	top:275px;
+	font-family:JetBrains Mono, serif;
+	text-align:left;
+	font-size:20px;
+	letter-spacing:0;
+}
+#seatsLeftPurchaseScreen {
+	color:rgba(0, 0, 0, 1);
+	width:353px;
+	height:160px;
+	position:absolute;
+	left:911px;
+	top:325px;
 	font-family:JetBrains Mono, serif;
 	text-align:left;
 	font-size:20px;
