@@ -18,14 +18,11 @@ import java.util.List;
  * Its also in charge of switching views whenever a user hits a button. By having one class dedicated
  * to being a barrier between front end and back end, the System is a Facade that provides easy access
  * to all the major functions of our Ticketing Site.
- *
  * The system class also acts as a creator for our Service and new Users. It also can create new Events as well,
  * but that is not a feature of the website and was just intended for testing purposes.
- *
  * Some functions of the System includes registering and logging in users based off of front end input,
  * displaying search results given a search term entered in by a user, dealing with user input when a
  * user tries to buy a ticket, and just switching webpages when a user hits a button.
- *
  *
  */
 @Controller
@@ -104,7 +101,9 @@ public class System {
             if(!password.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[-+_!@#$%^&*.,?~]).+$")) {
                 errorMessage += "Password does not match character requirements.";
             }
-            model.addAttribute("error", errorMessage);
+            if(model != null) {
+                model.addAttribute("error", errorMessage);
+            }
             return "error";
         }
     }
