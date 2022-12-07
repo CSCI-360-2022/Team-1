@@ -1604,6 +1604,7 @@
 	position:absolute;
 	left:508px;
 	top:512px;
+	z-index: 0;
 }
 #e62_35 {
 	color:rgba(255, 255, 255, 1);
@@ -1625,6 +1626,7 @@
 	left:486px;
 	top:493px;
 	border-radius: 20px;
+	z-index: 0;
 }
 
 
