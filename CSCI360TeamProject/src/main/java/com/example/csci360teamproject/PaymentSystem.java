@@ -1,12 +1,44 @@
 package com.example.csci360teamproject;
 
+import java.time.LocalDate;
+
 public class PaymentSystem {
     public static boolean checkPayment(PaymentInfo paymentInfo) {
-        long cnumber = Long.parseLong(paymentInfo.getCardNum());
-
-        return (thesize(cnumber) >= 13 && thesize(cnumber) <= 16) && (prefixmatch(cnumber, 4)
+        long cnumber;
+        try {
+            cnumber = Long.parseLong(paymentInfo.getCardNum());
+        }
+        catch (NumberFormatException e) {
+            return false;
+        }
+        boolean cardRegexTest = paymentInfo.cardNum.matches("\\d\\d\\d\\d\\d\\d\\d\\d\\d\\d\\d\\d\\d\\d\\d\\d");
+        if(!cardRegexTest) {
+            return false;
+        }
+        boolean cardStuff = (thesize(cnumber) >= 13 && thesize(cnumber) <= 16) && (prefixmatch(cnumber, 4)
                 || prefixmatch(cnumber, 5) || prefixmatch(cnumber, 37) || prefixmatch(cnumber, 6))
                 && ((sumdoubleeven(cnumber) + sumodd(cnumber)) % 10 == 0);
+        if(!cardStuff) {
+            return false;
+        }
+        boolean cvv = paymentInfo.getCvv().matches("\\d\\d\\d");
+        if(!cvv) {
+            return false;
+        }
+        boolean dateRegex = paymentInfo.expDate.matches("(1|2|3|4|5|6|7|8|9|10|11|12)\\/\\d\\d");
+        if(!dateRegex) {
+            return false;
+        }
+        LocalDate now = LocalDate.now();
+        String[] dateSplit = paymentInfo.expDate.split("/");
+        boolean futureDateCheck = now.getYear() % 2000 <= Integer.parseInt(dateSplit[1]);
+        if(now.getYear() % 2000 == Integer.parseInt(dateSplit[1])) {
+            futureDateCheck = futureDateCheck && now.getMonthValue() <= Integer.parseInt(dateSplit[0]);
+        }
+        if(!futureDateCheck) {
+            return false;
+        }
+        return true;
     }
     // Get the result from Step 2
     public static int sumdoubleeven(long cnumber) {
