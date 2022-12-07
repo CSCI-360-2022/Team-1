@@ -194,6 +194,10 @@ public class System {
             demand++;
             lastTimeStamp = currentTime;
         }
+        if(csci360TeamProjectService.findEvent(eventId).getSeatsLeft() == 0) {
+            model.addAttribute("error", "No more seats available for purchase");
+            return "error";
+        }
         if(loggedIn) {
             if(demand < demandMax) {
                 double taxRate = .07;
@@ -219,28 +223,47 @@ public class System {
         }
     }
 
-    @GetMapping("/purchase/{eventID}/confirm")
-    public String confirmPurchase(@PathVariable int eventID, Model model) {
+    @PostMapping("/purchase/confirm")
+    public String confirmPurchase(@RequestParam (name = "eventID") int eventID,
+                                  @RequestParam(name = "cardNumber") String cardNumber,
+                                  @RequestParam(name = "expDate") String expDate,
+                                  @RequestParam(name = "cvv") int cvv,
+                                  @RequestParam(name = "zipCode") int zipCode,
+                                  Model model) {
         Event event = csci360TeamProjectService.findEvent(eventID);
         model.addAttribute("eventName", event.getEventName());
         model.addAttribute("price", event.getPrice());
+        model.addAttribute("cardNumber", cardNumber);
+        model.addAttribute("expDate", expDate);
+        model.addAttribute("cvv", cvv);
+        model.addAttribute("zipCode", zipCode);
+        model.addAttribute("eventID", eventID);
         return "purchaseConfirmation";
     }
 
-    public String purchase(int cardNumber, String expDate, int cvv, String name, String address, String city, String state, String country, int zipCode) {
-        String cardNumStr = String.valueOf(cardNumber);
+    @PostMapping("/purchase/success")
+    public String purchase(@RequestParam(name = "eventID") int eventID,
+                           @RequestParam(name = "cardNumber") String cardNumber,
+                           @RequestParam(name = "expDate") String expDate,
+                           @RequestParam(name = "cvv") int cvv,
+                           @RequestParam(name = "zipCode") int zipCode,
+                           Model model) {
         String cvvNumStr = String.valueOf(cvv);
         String zipCodeStr = String.valueOf(zipCode);
 
-        PaymentInfo card = new PaymentInfo(cardNumStr, expDate, cvvNumStr, zipCodeStr);
+        PaymentInfo card = new PaymentInfo(cardNumber, expDate, cvvNumStr, zipCodeStr);
         if (checkPayment(card)){
-             return "purchaseSuccess";
+            Event old = csci360TeamProjectService.findEvent(eventID);
+            old.setSeatsLeft(old.getSeatsLeft()-1);
+            csci360TeamProjectService.updateEvent(old, eventID);
+            return "purchaseSuccess";
         }
+        model.addAttribute("error", "Card Information is incorrect");
         return "error";
     }
 
-    @GetMapping("/events/purchase/cancel/{eventId}")
-    public String cancelPurchase(@PathVariable int eventId, Model model) {
+    @GetMapping("/purchase/cancel")
+    public String cancelPurchase(@RequestParam(name = "eventID") int eventId, Model model) {
         return selectEvent(eventId, model);
     }
 

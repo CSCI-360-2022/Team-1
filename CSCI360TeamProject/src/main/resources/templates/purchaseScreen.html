@@ -57,33 +57,35 @@
   <div id="e60_43"></div>
   <div id="e60_44"></div>
   <span  id="e60_34">CARD INFORMATION:</span>
-  <label  class="purchaseLabels" for="e60_49">Cardholder Name</label>
-  <input  type="text" name="cardHolder"  id="e60_49">
-  <br>
-  <label  class="purchaseLabels" for="e60_50">Card Number</label>
-  <input  type="text" name="cardNumber" id="e60_50">
-  <br>
-  <label  class="purchaseLabels" for="e60_51">EXP Date</label>
-  <input  type="text" name="expDate" id="e60_51">
-  <br>
-  <label  class="purchaseLabels" for="e60_52">CVV</label>
-  <input  type="text" name="cvv" id="e60_52">
-  <br>
-  <label  class="purchaseLabels" for="e60_53">Billing Address</label>
-  <input  id="e60_53" name="billingAddress" type="text">
-  <br>
-  <label  class="purchaseLabels" for="e60_55">City</label>
-  <input  type="text" name="city" id="e60_55">
-  <br>
-  <label  class="purchaseLabels" for="e60_56">State</label>
-  <input  type="text" name="state" id="e60_56">
-  <br>
-  <label  class="purchaseLabels" for="e60_57">Country</label>
-  <input  type="text" name="country" id="e60_57">
-  <br>
-  <label  class="purchaseLabels" for="e60_58">Zip Code</label>
-  <input  type="text" name="zipCode" id="e60_58">
-  <br>
-  <div id="e60_36"></div><span  id="e60_39">PURCHASE</span>
-
+  <form method="post" action="/purchase/confirm">
+    <input type="hidden" name="eventID" th:value="${eventID}">
+    <label  class="purchaseLabels" for="e60_49">Cardholder Name</label>
+    <input  type="text" name="cardHolder"  id="e60_49">
+    <br>
+    <label  class="purchaseLabels" for="e60_50">Card Number</label>
+    <input  type="text" name="cardNumber" id="e60_50">
+    <br>
+    <label  class="purchaseLabels" for="e60_51">EXP Date</label>
+    <input  type="text" name="expDate" id="e60_51">
+    <br>
+    <label  class="purchaseLabels" for="e60_52">CVV</label>
+    <input  type="text" name="cvv" id="e60_52">
+    <br>
+    <label  class="purchaseLabels" for="e60_53">Billing Address</label>
+    <input  id="e60_53" name="billingAddress" type="text">
+    <br>
+    <label  class="purchaseLabels" for="e60_55">City</label>
+    <input  type="text" name="city" id="e60_55">
+    <br>
+    <label  class="purchaseLabels" for="e60_56">State</label>
+    <input  type="text" name="state" id="e60_56">
+    <br>
+    <label  class="purchaseLabels" for="e60_57">Country</label>
+    <input  type="text" name="country" id="e60_57">
+    <br>
+    <label  class="purchaseLabels" for="e60_58">Zip Code</label>
+    <input  type="text" name="zipCode" id="e60_58">
+    <br>
+    <button type="submit" id="e60_36"></button><span id="e60_39">PURCHASE</span>
+  </form>
 </div>

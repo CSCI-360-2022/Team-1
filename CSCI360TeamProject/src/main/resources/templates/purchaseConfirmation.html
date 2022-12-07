@@ -8,9 +8,20 @@
     <span  id="e55_16">TOTAL COST:</span>
     <span  id="e55_17" th:text="${eventName}"></span>
     <span  id="e55_18" th:text="${price}"></span>
-    <span  id="e55_21">Confirm</span>
-    <span  id="e55_22">Cancel</span>
-    <div id="e62_37"></div>
-    <div id="e62_38"></div>
-  </div><span  id="e55_23">PURCHASE CONFIRMATION</span>
+    <form method="post" action="/purchase/success">
+      <input type="hidden" name="cardNumber" th:value="${cardNumber}">
+      <input type="hidden" name="expDate" th:value="${expDate}">
+      <input type="hidden" name="cvv" th:value="${cvv}">
+      <input type="hidden" name="zipCode" th:value="${zipCode}">
+      <input type="hidden" name="eventID" th:value="${eventID}">
+      <span  id="e55_21">Confirm</span>
+      <button type="submit" id="e62_38"></button>
+    </form>
+    <form method="get" action="/purchase/cancel">
+      <span  id="e55_22">Cancel</span>
+      <input type="hidden" name="eventID" th:value="${eventID}">
+      <button type="submit" id="e62_37"></button>
+    </form>
+  </div>
+  <span  id="e55_23">PURCHASE CONFIRMATION</span>
 </div>
