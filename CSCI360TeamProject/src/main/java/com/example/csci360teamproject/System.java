@@ -3,22 +3,35 @@ package com.example.csci360teamproject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.List;
 
+
+/**
+ * The System class is our controller class that deals with getting user input and processing it.
+ * Its also in charge of switching views whenever a user hits a button. By having one class dedicated
+ * to being a barrier between front end and back end, the System is a Facade that provides easy access
+ * to all the major functions of our Ticketing Site.
+ * The system class also acts as a creator for our Service and new Users. It also can create new Events as well,
+ * but that is not a feature of the website and was just intended for testing purposes.
+ * Some functions of the System includes registering and logging in users based off of front end input,
+ * displaying search results given a search term entered in by a user, dealing with user input when a
+ * user tries to buy a ticket, and just switching webpages when a user hits a button.
+ *
+ */
 @Controller
 public class System {
-
     @Autowired
     private Service csci360TeamProjectService;
     private boolean loggedIn = false;
+    private int demand = 0;
+    private double lastTimeStamp = 0;
 
 
 //    @PostMapping("/addUser")
@@ -28,10 +41,10 @@ public class System {
 //        return "Saved";
 //    }
 
-    @GetMapping("/listUsers")
-    public @ResponseBody Iterable<User> getAllUsers() {
-        return csci360TeamProjectService.listUsers();
-    }
+//    @GetMapping("/listUsers")
+//    public @ResponseBody Iterable<User> getAllUsers() {
+//        return csci360TeamProjectService.listUsers();
+//    }
 
 //    @GetMapping("/hello")
 //    public String helloWorld() {
@@ -54,6 +67,7 @@ public class System {
             return "index";
         }
         else {
+            model.addAttribute("error", "Login Information Incorrect");
             return "error";
         }
     }
@@ -73,6 +87,7 @@ public class System {
             csci360TeamProjectService.saveUser(user);
             //        model.addAttribute("username", username);
             //        model.addAttribute("password", password);
+            loggedIn = true;
             return "index";
         }
         else {
@@ -86,7 +101,9 @@ public class System {
             if(!password.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[-+_!@#$%^&*.,?~]).+$")) {
                 errorMessage += "Password does not match character requirements.";
             }
-            model.addAttribute("error", errorMessage);
+            if(model != null) {
+                model.addAttribute("error", errorMessage);
+            }
             return "error";
         }
     }
@@ -115,14 +132,10 @@ public class System {
         if(usr == null) {
             return false;
         }
-        if (password.equals(usr.getPassword()))
-        {
-            return true;
-        }
+        return password.equals(usr.getPassword());
 
 
         //csci360TeamProjectService.findUser(21);
-        return false;
     }
 
     public String passwordHash(String password) {
@@ -144,16 +157,64 @@ public class System {
         }
     }
 
-    public String search(String searchTerm, String[] tags) {
-        return null;
+    @GetMapping("/search")
+    public String search(@RequestParam (name = "searchTerm") String searchTerm, String[] tags, Model model) {
+        List<Event> eventList = csci360TeamProjectService.findEvents(searchTerm, tags);
+        model.addAttribute("eventList", eventList);
+        return "searchResults";
     }
 
-    public String selectEvent(int eventId) {
-        return null;
+    @GetMapping("/events/{eventId}")
+    public String selectEvent(@PathVariable int eventId, Model model) {
+        Event event = csci360TeamProjectService.findEvent(eventId);
+        model.addAttribute("eventName", event.getEventName());
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("eeee MMMM d yyyy");
+        model.addAttribute("date", event.getDate().format(formatter));
+        model.addAttribute("seatsLeft", event.getSeatsLeft());
+        model.addAttribute("location", event.getLocation());
+        model.addAttribute("description", event.getDescription());
+        model.addAttribute("price", String.format("%.2f", event.getPrice()));
+        model.addAttribute("tags", event.getTags());
+        model.addAttribute("eventID", eventId);
+        return "productDetails";
     }
 
-    public String startPurchase(int eventId) {
-        return null;
+    @GetMapping("/events/purchase/{eventId}")
+    public String startPurchase(@PathVariable int eventId, Model model) {
+        double currentTime = java.lang.System.currentTimeMillis();
+        int demandMax = 5;
+        int demandPentalty = 5;
+        if (currentTime - lastTimeStamp > demandPentalty * 1000) {
+            demand = 0;
+            lastTimeStamp = currentTime;
+        }
+        else {
+            demand++;
+            lastTimeStamp = currentTime;
+        }
+        if(loggedIn) {
+            if(demand < demandMax) {
+                double taxRate = .07;
+                Event event = csci360TeamProjectService.findEvent(eventId);
+                model.addAttribute("price", String.format("%.2f", event.getPrice()));
+                model.addAttribute("tax", String.format("%.2f", event.getPrice() * taxRate));
+                model.addAttribute("total", String.format("%.2f", event.getPrice() + (event.getPrice() * taxRate)));
+                model.addAttribute("eventName", event.getEventName());
+                model.addAttribute("date", event.getDate());
+                model.addAttribute("location", event.getLocation());
+                model.addAttribute("description", event.getDescription());
+                model.addAttribute("eventID", eventId);
+                model.addAttribute("seatsLeft", event.getSeatsLeft());
+                return "purchaseScreen";
+            }
+            else {
+                model.addAttribute("error", "This ticket is in hot demand currently. Please try again in another " + demandPentalty  + " seconds");
+                return "error";
+            }
+        }
+        else {
+            return displayLoginPage();
+        }
     }
 
     public String confirmPurchase() {
@@ -164,11 +225,8 @@ public class System {
         return null;
     }
 
-    public void emailReceipt(String receipt, String email) {
-
-    }
-
     public String cancelPurchase() {
         return null;
     }
+
 }
