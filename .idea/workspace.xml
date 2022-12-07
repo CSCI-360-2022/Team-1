@@ -4,6 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+    <list default="true" id="d5b9bbd9-0781-45f9-a6cb-81fc4683dcc6" name="Changes" comment="Fixed Login Bug">
     <list default="true" id="d5b9bbd9-0781-45f9-a6cb-81fc4683dcc6" name="Changes" comment="Fixed the UI as well as made the event appear on the page">
     <list default="true" id="d5b9bbd9-0781-45f9-a6cb-81fc4683dcc6" name="Changes" comment="added hash function">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -18,6 +19,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSCI360TeamProject/src/main/java/com/example/csci360teamproject/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/main/java/com/example/csci360teamproject/Service.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSCI360TeamProject/src/main/java/com/example/csci360teamproject/System.java" beforeDir="false" afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/main/java/com/example/csci360teamproject/System.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources/templates/error.html" beforeDir="false" afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources/templates/error.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources/static/styles/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources/static/styles/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources/templates/purchaseConfirmation.html" beforeDir="false" afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources/templates/purchaseConfirmation.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSCI360TeamProject/src/test/java/com/example/csci360teamproject/Csci360TeamProjectApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/test/java/com/example/csci360teamproject/Csci360TeamProjectApplicationTests.java" afterDir="false" />
@@ -41,6 +43,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
+        <entry key="$PROJECT_DIR$" value="32-fix-bug-where-user-has-to-sign-in-using-hashed-password-versus-hashing-the-password-entered" />
         <entry key="$PROJECT_DIR$" value="main" />
         <entry key="$PROJECT_DIR$" value="17-create-the-confirmpurchase-function" />
         <entry key="$PROJECT_DIR$" value="main" />
@@ -395,6 +398,7 @@
       <option name="project" value="LOCAL" />
       <updated>1669229105397</updated>
     </task>
+    <option name="localTasksCounter" value="18" />
     <task id="LOCAL-00018" summary="Fixed password requirements">
       <created>1669234204722</created>
       <option name="number" value="00018" />
@@ -467,6 +471,7 @@
     <MESSAGE value="Added a test case for adding a new user" />
     <MESSAGE value="TP D9 Submission" />
     <MESSAGE value="Fixed Login Bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed Login Bug" />
     <MESSAGE value="Fixed the UI as well as made the event appear on the page" />
     <option name="LAST_COMMIT_MESSAGE" value="Fixed the UI as well as made the event appear on the page" />
   </component>
