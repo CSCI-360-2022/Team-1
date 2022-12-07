@@ -219,8 +219,12 @@ public class System {
         }
     }
 
-    public String confirmPurchase() {
-        return null;
+    @GetMapping("/purchase/{eventID}/confirm")
+    public String confirmPurchase(@PathVariable int eventID, Model model) {
+        Event event = csci360TeamProjectService.findEvent(eventID);
+        model.addAttribute("eventName", event.getEventName());
+        model.addAttribute("price", event.getPrice());
+        return "purchaseConfirmation";
     }
 
     public String purchase(int cardNumber, String expDate, int cvv, String name, String address, String city, String state, String country, int zipCode) {

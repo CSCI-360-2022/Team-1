@@ -4,6 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+    <list default="true" id="d5b9bbd9-0781-45f9-a6cb-81fc4683dcc6" name="Changes" comment="Fixed the UI as well as made the event appear on the page">
     <list default="true" id="d5b9bbd9-0781-45f9-a6cb-81fc4683dcc6" name="Changes" comment="added hash function">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSCI360TeamProject/src/main/java/com/example/csci360teamproject/PaymentInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/main/java/com/example/csci360teamproject/PaymentInfo.java" afterDir="false" />
@@ -17,6 +18,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSCI360TeamProject/src/main/java/com/example/csci360teamproject/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/main/java/com/example/csci360teamproject/Service.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSCI360TeamProject/src/main/java/com/example/csci360teamproject/System.java" beforeDir="false" afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/main/java/com/example/csci360teamproject/System.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources/static/styles/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources/static/styles/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources/templates/purchaseConfirmation.html" beforeDir="false" afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources/templates/purchaseConfirmation.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSCI360TeamProject/src/test/java/com/example/csci360teamproject/Csci360TeamProjectApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/test/java/com/example/csci360teamproject/Csci360TeamProjectApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -463,6 +466,20 @@
     <MESSAGE value="Made changes to Sequence Diagrams.pdf, OperationContracts rev5.md, and did some code refactoring to make our code look more like what we originally planned." />
     <MESSAGE value="Added a test case for adding a new user" />
     <MESSAGE value="TP D9 Submission" />
+    <MESSAGE value="Fixed Login Bug" />
+    <MESSAGE value="Fixed the UI as well as made the event appear on the page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed the UI as well as made the event appear on the page" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/CSCI360TeamProject/src/test/java/com/example/csci360teamproject/Csci360TeamProjectApplicationTests.java</url>
+          <line>130</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <MESSAGE value="Did some front end coding of the event search" />
     <MESSAGE value="Menu bar functionality on most pages." />
     <MESSAGE value="Check Demand" />
