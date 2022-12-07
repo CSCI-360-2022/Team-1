@@ -3,7 +3,13 @@
 <link rel="stylesheet" href="../static/styles/css/styles.css" th:href="@{/styles/css/styles.css}">
 <div id=e55_13>
   <div id="e62_29"></div>
-  <div id=e55_14><span  id="e55_15">EVENT:</span><span  id="e55_16">TOTAL COST:</span><span  id="e55_17">College of Charleston Graduation</span><span  id="e55_18">$21.44</span><span  id="e55_21">Confirm</span><span  id="e55_22">Cancel</span>
+  <div id=e55_14>
+    <span  id="e55_15">EVENT:</span>
+    <span  id="e55_16">TOTAL COST:</span>
+    <span  id="e55_17" th:text="${eventName}"></span>
+    <span  id="e55_18" th:text="${price}"></span>
+    <span  id="e55_21">Confirm</span>
+    <span  id="e55_22">Cancel</span>
     <div id="e62_37"></div>
     <div id="e62_38"></div>
   </div><span  id="e55_23">PURCHASE CONFIRMATION</span>

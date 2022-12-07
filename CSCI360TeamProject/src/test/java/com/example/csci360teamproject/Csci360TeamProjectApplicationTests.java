@@ -5,12 +5,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.security.NoSuchAlgorithmException;
-import java.time.LocalDate;
+
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
@@ -24,56 +20,7 @@ class Csci360TeamProjectApplicationTests {
     private Service csci360TeamProjectService;
     @Autowired
     private System system;
-    @Test
-    public void createReceipt() {
-        Receipt receipt = new Receipt();
-        Assertions.assertNotNull(receipt);
-        Assertions.assertEquals(0, receipt.getPaymentTotal(), 0.0);
-        LocalDate now = LocalDate.now();
-        long transactionId = 12309432;
-        Receipt receipt1 = new Receipt(20, 13, 39, now, transactionId, csci360TeamProjectService);
-        Assertions.assertEquals(20, receipt1.getPaymentTotal(), 0.0);
-        Assertions.assertNotEquals(15, receipt1.getPaymentTotal(), 0.0);
-        Assertions.assertEquals(13, receipt1.getEventId());
-        Assertions.assertNotEquals(19, receipt1.getEventId());
-        Assertions.assertEquals(39, receipt1.getCustomerId());
-        Assertions.assertNotEquals(1, receipt1.getCustomerId());
-        Assertions.assertEquals(receipt1.getDate(), now);
-        Assertions.assertNotEquals(receipt1.getDate(), LocalDate.of(2022,11, 1));
-        Assertions.assertEquals(12309432, receipt1.getTransactionId());
-        Assertions.assertNotEquals(12309422, receipt1.getTransactionId());
-    }
 
-    @Test
-    public void setReceiptTest() {
-        LocalDate now = LocalDate.now();
-        long transactionId = 12309432;
-        Receipt receipt1 = new Receipt(20, 13, 39, now, transactionId, csci360TeamProjectService);
-        receipt1.setPaymentTotal(30);
-        receipt1.setEventId(20);
-        receipt1.setCustomerId(19);
-        receipt1.setDate(now.plusMonths(1));
-        receipt1.setTransactionId(3248958);
-        Assertions.assertEquals(30, receipt1.getPaymentTotal(), 0.0);
-        Assertions.assertNotEquals(20, receipt1.getPaymentTotal(), 0.0);
-        Assertions.assertEquals(20, receipt1.getEventId());
-        Assertions.assertNotEquals(13, receipt1.getCustomerId());
-        Assertions.assertEquals(19, receipt1.getCustomerId());
-        Assertions.assertNotEquals(39, receipt1.getCustomerId());
-        Assertions.assertEquals(receipt1.getDate(), now.plusMonths(1));
-        Assertions.assertNotEquals(receipt1.getDate(), now);
-        Assertions.assertEquals(3248958, receipt1.getTransactionId());
-        Assertions.assertNotEquals(12309432, receipt1.getTransactionId());
-    }
-
-    @Test
-    public void buildReceiptTest() throws IOException {
-        Receipt newReceipt = new Receipt(67.23, 13, 21, LocalDate.of(2022, 11, 2), 435673461, csci360TeamProjectService);
-        File file = new File("src/test/java/com/example/csci360teamproject/ExampleReceipt.txt");
-        //Scanner scan = new Scanner(file);
-        String fileText = Files.readString(Paths.get(file.toURI()));
-        Assertions.assertEquals(newReceipt.buildReceipt(), fileText);
-    }
     //    @Test
 //    public void testPayementTotal() {
 //        Receipt receipt = new Receipt();
@@ -102,31 +49,29 @@ class Csci360TeamProjectApplicationTests {
 
     }
 
-    @Test
-    public void emailTest() throws Exception {
-        System gui = new System();
-        Receipt newReceipt = new Receipt(67.23, 13, 21, LocalDate.of(2022, 11, 2), 435673461, csci360TeamProjectService);
-        //gui.emailReceipt(newReceipt, "bmduvall10@gmail.com", csci360TeamProjectService);
-    }
 
     @Test
     public void createUserTest() {
         //System gui = new System();
-        User newUser = new User("CoolGuy25", system.passwordHash("notASecurePassword"), "coolguy25@yahoo.com");
-        User badUser = new User("CoolGuy25", "notASecurePassword", "coolguy25@yahoo.com");
-        system.createUser("coolguy25@yahoo.com", "CoolGuy25", "notASecurePassword", null);
+        User newUser = new User("CoolGuy25", system.passwordHash("aVery5curePa55word!"), "coolguy25@yahoo.com");
+        User badUser = new User("CoolGuy25", "aVery5curePa55word!", "coolguy25@yahoo.com");
+        system.createUser("coolguy25@yahoo.com", "CoolGuy25", "aVery5curePa55word!", null);
         User retrievedUser = csci360TeamProjectService.findUser("CoolGuy25");
         Assertions.assertEquals(newUser, retrievedUser);
         Assertions.assertNotEquals(badUser, retrievedUser);
         csci360TeamProjectService.deleteUserById(retrievedUser.getUserID());
     }
 
-//    @Test
-//    public void createUserTest() {
-//        User user = new User("Bobby", "somePassword", "coolEmail@email.com");
-//        csci360TeamProjectService.saveUser(user);
-//
-//    }
+    //Not a unit test, but designed to see what sort of results the search gives back
+    @Test
+    public void searchEventTest() {
+        List<Event> basketball = csci360TeamProjectService.findEvents("Basketball", new String[0]);
+        String[] tags = new String[1];
+        tags[0] = "Sports";
+        List<Event> sports = csci360TeamProjectService.findEvents(null, tags);
+    }
+
+
 }
 
 
