@@ -12,6 +12,8 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
+import static com.example.csci360teamproject.PaymentSystem.checkPayment;
+
 
 /**
  * The System class is our controller class that deals with getting user input and processing it.
@@ -221,8 +223,16 @@ public class System {
         return null;
     }
 
-    public String purchase(int cardNumber, LocalDate expDate, int cvv, String name, String address, String city, String state, String country, int zipCode) {
-        return null;
+    public String purchase(int cardNumber, String expDate, int cvv, String name, String address, String city, String state, String country, int zipCode) {
+        String cardNumStr = String.valueOf(cardNumber);
+        String cvvNumStr = String.valueOf(cvv);
+        String zipCodeStr = String.valueOf(zipCode);
+
+        PaymentInfo card = new PaymentInfo(cardNumStr, expDate, cvvNumStr, zipCodeStr);
+        if (checkPayment(card)){
+             return "purchaseSuccess";
+        }
+        return "error";
     }
 
     public String cancelPurchase() {
