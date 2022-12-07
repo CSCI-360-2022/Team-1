@@ -4,10 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5b9bbd9-0781-45f9-a6cb-81fc4683dcc6" name="Changes" comment="Fixed Login Bug">
+    <list default="true" id="d5b9bbd9-0781-45f9-a6cb-81fc4683dcc6" name="Changes" comment="Loads of Tests">
+      <change afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/test/java/com/example/csci360teamproject/EventTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/test/java/com/example/csci360teamproject/ReceiptTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/test/java/com/example/csci360teamproject/ServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/test/java/com/example/csci360teamproject/UserTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSCI360TeamProject/src/main/java/com/example/csci360teamproject/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/main/java/com/example/csci360teamproject/Service.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSCI360TeamProject/src/main/java/com/example/csci360teamproject/System.java" beforeDir="false" afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/main/java/com/example/csci360teamproject/System.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources/templates/error.html" beforeDir="false" afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources/templates/error.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSCI360TeamProject/src/test/java/com/example/csci360teamproject/Csci360TeamProjectApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/CSCI360TeamProject/src/test/java/com/example/csci360teamproject/Csci360TeamProjectApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,16 +24,19 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="32-fix-bug-where-user-has-to-sign-in-using-hashed-password-versus-hashing-the-password-entered" />
+        <entry key="$PROJECT_DIR$" value="17-create-the-confirmpurchase-function" />
+        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="22-update-the-register-function-to-account-for-mvp-requirements" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -59,6 +67,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectId" id="2FdZFubxshbZjnguEOgYDFFuPPG" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -67,32 +78,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_directory_selection&quot;: &quot;/Users/brookeduvall/IdeaProjects/Team-1/CSCI360TeamProject/src/test/java&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/brookeduvall/IdeaProjects/Team-1/TP D9&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;7ba18b37b4363cbb7c476ca828be5c4d&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "last_directory_selection": "/Users/brookeduvall/IdeaProjects/Team-1/CSCI360TeamProject/src/test/java",
+    "last_opened_file_path": "/Users/brookeduvall/IdeaProjects/Team-1/TP D9",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "spring.configuration.checksum": "7ba18b37b4363cbb7c476ca828be5c4d"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/TP D9" />
@@ -108,26 +121,17 @@
       <recent name="$PROJECT_DIR$/CSCI360TeamProject/src/main/resources/db" />
       <recent name="$PROJECT_DIR$/TP D5" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.example.csci360teamproject" />
     </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.example.csci360teamproject" />
+    </key>
   </component>
-  <component name="RunManager" selected="JUnit.Csci360TeamProjectApplicationTests.searchEventTest">
-    <configuration name="CSCI360Tests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CSCI360TeamProject" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.csci360teamproject.Service" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.csci360teamproject" />
-      <option name="MAIN_CLASS_NAME" value="com.example.csci360teamproject.CSCI360Tests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.Csci360TeamProjectApplicationTests.createUserTest">
     <configuration name="CSCI360Tests.buildReceiptTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CSCI360TeamProject" />
       <extension name="coverage">
@@ -144,23 +148,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Csci360TeamProjectApplicationTests.buildReceiptTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CSCI360TeamProject" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.csci360teamproject.Service" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.csci360teamproject" />
-      <option name="MAIN_CLASS_NAME" value="com.example.csci360teamproject.Csci360TeamProjectApplicationTests" />
-      <option name="METHOD_NAME" value="buildReceiptTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Csci360TeamProjectApplicationTests.searchEventTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Csci360TeamProjectApplicationTests.createUserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CSCI360TeamProject" />
       <extension name="coverage">
         <pattern>
@@ -170,7 +158,23 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.example.csci360teamproject" />
       <option name="MAIN_CLASS_NAME" value="com.example.csci360teamproject.Csci360TeamProjectApplicationTests" />
-      <option name="METHOD_NAME" value="searchEventTest" />
+      <option name="METHOD_NAME" value="createUserTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServiceTest.userGeneralTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CSCI360TeamProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.csci360teamproject.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.csci360teamproject" />
+      <option name="MAIN_CLASS_NAME" value="com.example.csci360teamproject.ServiceTest" />
+      <option name="METHOD_NAME" value="userGeneralTests" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -191,6 +195,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CSCI360TeamProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.csci360teamproject.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.csci360teamproject" />
+      <option name="MAIN_CLASS_NAME" value="com.example.csci360teamproject.UserTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Csci360TeamProjectApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="CSCI360TeamProject" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.csci360teamproject.Csci360TeamProjectApplication" />
@@ -200,11 +219,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.Csci360TeamProjectApplicationTests.searchEventTest" />
+        <item itemvalue="JUnit.Csci360TeamProjectApplicationTests.createUserTest" />
+        <item itemvalue="JUnit.ServiceTest.userGeneralTests" />
+        <item itemvalue="JUnit.UserTest" />
         <item itemvalue="JUnit.Tests" />
         <item itemvalue="JUnit.CSCI360Tests.buildReceiptTest" />
-        <item itemvalue="JUnit.CSCI360Tests" />
-        <item itemvalue="JUnit.Csci360TeamProjectApplicationTests.buildReceiptTest" />
       </list>
     </recent_temporary>
   </component>
@@ -229,6 +248,8 @@
       <workItem from="1666904552367" duration="7116000" />
       <workItem from="1667225850919" duration="25448000" />
       <workItem from="1667914167987" duration="7292000" />
+      <workItem from="1669299120307" duration="315000" />
+      <workItem from="1670421384416" duration="5968000" />
     </task>
     <task id="LOCAL-00001" summary="Very basic login stuff">
       <created>1665424111344</created>
@@ -349,7 +370,42 @@
       <option name="project" value="LOCAL" />
       <updated>1669229105397</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Fixed password requirements">
+      <created>1669234204722</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1669234204722</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Menu bar functionality on most pages.">
+      <created>1670168782429</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1670168782429</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Check Demand">
+      <created>1670262154461</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1670262154461</updated>
+    </task>
+    <task id="LOCAL-00021" summary="UI Hopefully Done">
+      <created>1670272270836</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1670272270836</updated>
+    </task>
+    <task id="LOCAL-00022" summary="GRASP Comments">
+      <created>1670421411895</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1670421411895</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -385,18 +441,12 @@
     <MESSAGE value="Made changes to Sequence Diagrams.pdf, OperationContracts rev5.md, and did some code refactoring to make our code look more like what we originally planned." />
     <MESSAGE value="Added a test case for adding a new user" />
     <MESSAGE value="TP D9 Submission" />
-    <MESSAGE value="Fixed Login Bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed Login Bug" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/CSCI360TeamProject/src/test/java/com/example/csci360teamproject/Csci360TeamProjectApplicationTests.java</url>
-          <line>130</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Did some front end coding of the event search" />
+    <MESSAGE value="Menu bar functionality on most pages." />
+    <MESSAGE value="Check Demand" />
+    <MESSAGE value="UI Hopefully Done" />
+    <MESSAGE value="GRASP Comments" />
+    <MESSAGE value="Loads of Tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Loads of Tests" />
   </component>
 </project>

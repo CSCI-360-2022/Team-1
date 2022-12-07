@@ -1,14 +1,46 @@
 <link href="https://fonts.googleapis.com/css?family=JetBrains+Mono&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../static/styles/css/styles.css" th:href="@{/styles/css/styles.css}">
+<script  th:inline="javascript">
+  function openMenu() {
+    const element = document.getElementById("menuPopup")
+    if(element.style.display === "none") {
+      element.style.display = "block";
+    }
+    else {
+      element.style.display = "none";
+    }
+  }
+</script>
 <div id=e8_38>
-  <div id="e62_32"></div>
-  <div id=e41_108><span  id="e41_109">Team 1</span>
-    <div id=e41_110>
-      <div id="e41_111"></div>
+  <div id=MenuBar>
+    <span  id="Team1">Team 1</span>
+    <div id=SearchBarWhole>
+      <form method="get" action="/search">
+        <div  id="SearchBar">
+          <input type="text" name="searchTerm" id="searchBarInput">
+        </div>
+        <div  id="SearchImage">
+          <button type="submit" name="searchButton" id="searchBarButton"></button>
+        </div>
+      </form>
     </div>
-    <div id="e41_112"></div>
-    <div id="e41_113"></div>
+    <button  id="ProfileImage" class="profilePopup" th:onclick="openMenu()"></button>
+    <div class="menuPopup" id="menuPopup">
+      <a href="loginPage.html" th:href="@{http://localhost:8080/displayLoginPage}">Login</a><br>
+      <a href="registerPage.html" th:href="@{http://localhost:8080/displayRegisterPage}">Register</a>
+    </div>
   </div>
   <div id="e29_87"></div>
-  <div id="e29_88"></div><span  id="e29_113">Location: TD Arena</span><span  id="e29_89">Filter</span><span  id="e29_90">Events that match your search parameters:</span><span  id="e29_92">Official Cofc</span><span  id="e29_93">Graduation</span><span  id="e29_94">Spring 2023</span><span  id="e29_95">College of Charleston Graduation Spring 2023</span><span  id="e29_96">Cofc vs Chattanooga Basketball Game</span><span  id="e29_97">When: 5/7/23 at 12:00PM</span><span  id="e29_114">When: 11/6/22 at 6:00PM</span><span  id="e29_98">Location: College of Charleston Cistern Yard</span>
+  <div id="e29_88"></div>
+  <span  id="e29_89">Filter</span>
+  <span  id="e29_92">Official Cofc</span>
+  <span  id="e29_93">Graduation</span>
+  <span  id="e29_94">Spring 2023</span>
+  <div id="eventListing">
+    <div th:each="event: ${eventList}">
+      <a th:text="${event.getEventName()}" th:href="@{/events/{eventId}(eventId=${event.getEventID()})}"></a>
+      <p id="eventSubtext" th:text="'Location: ' + ${event.getLocation()} + '; Date: ' + ${event.getDate()}"></p>
+      <br>
+    </div>
+  </div>
 </div>
