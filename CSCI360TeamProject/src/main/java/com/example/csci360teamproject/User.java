@@ -18,6 +18,10 @@ public class User {
     private String email;
     private String password;
 
+    /**
+     * User objects have methods relating to getting and setting attributes users have due to the User object
+     * being the information expert in relation to User attributes
+     */
     public User() {
     }
 

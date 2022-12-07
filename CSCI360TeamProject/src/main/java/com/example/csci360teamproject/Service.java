@@ -8,6 +8,17 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * This class is an example of Pure Fabrication. It deals with CRUD operations on our database.
+ * When creating this class we did not really know what to call it. We chose the name service
+ * due to it being a Spring Service object. The only reason we had to create this class is due
+ * to some dependency injection issues when creating our unit tests. The book describes this sort
+ * of class as a PersistentStorage class when talking about the POS example which may have been a
+ * better fabricated name, but the class was created before we learned about Pure Fabrication and
+ * the name kind of stuck, so we never changed it. This class is useful in that it contains all the
+ * CRUD operations we need to run our application in one place rather than split up into users and
+ * events.
+ */
 @org.springframework.stereotype.Service
 public class Service {
     @Autowired

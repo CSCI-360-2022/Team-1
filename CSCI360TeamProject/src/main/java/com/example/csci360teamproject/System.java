@@ -12,9 +12,24 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
+
+/**
+ * The System class is our controller class that deals with getting user input and processing it.
+ * Its also in charge of switching views whenever a user hits a button. By having one class dedicated
+ * to being a barrier between front end and back end, the System is a Facade that provides easy access
+ * to all the major functions of our Ticketing Site.
+ *
+ * The system class also acts as a creator for our Service and new Users. It also can create new Events as well,
+ * but that is not a feature of the website and was just intended for testing purposes.
+ *
+ * Some functions of the System includes registering and logging in users based off of front end input,
+ * displaying search results given a search term entered in by a user, dealing with user input when a
+ * user tries to buy a ticket, and just switching webpages when a user hits a button.
+ *
+ *
+ */
 @Controller
 public class System {
-
     @Autowired
     private Service csci360TeamProjectService;
     private boolean loggedIn = false;
@@ -29,10 +44,10 @@ public class System {
 //        return "Saved";
 //    }
 
-    @GetMapping("/listUsers")
-    public @ResponseBody Iterable<User> getAllUsers() {
-        return csci360TeamProjectService.listUsers();
-    }
+//    @GetMapping("/listUsers")
+//    public @ResponseBody Iterable<User> getAllUsers() {
+//        return csci360TeamProjectService.listUsers();
+//    }
 
 //    @GetMapping("/hello")
 //    public String helloWorld() {
