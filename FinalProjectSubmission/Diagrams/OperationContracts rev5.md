@@ -3,7 +3,7 @@
 
 # System
 ## Contract C01: Log in to System
-| Operation       | login(username : String, password : String) : String                                            |
+| Operation       | login(username : String, password : String, model: Model) : String                              |
 |-----------------|-------------------------------------------------------------------------------------------------|
 | Cross Reference | Use Cases: Logging In                                                                           |
 | Preconditions   | User has entered in login info to respective text areas                                         |
@@ -39,7 +39,7 @@
 | Preconditions   | User has pressed the add event button on the add event gui page                                                                         |
 | Postconditions  | A new event object was added to the database with the following above parameters                                                        |
 ## Contract C07: Password Hash
-| Operation       | hash(password : String) : String                                                                            |
+| Operation       | passwordHash(password : String) : String                                                                    |
 |-----------------|-------------------------------------------------------------------------------------------------------------|
 | Cross Reference | Use Cases: Logging In, Creating an Account                                                                  |
 | Preconditions   | The users un-hashed password was provided to the back end when the user creates an account or is logging in |
@@ -56,33 +56,39 @@
 | Cross Reference | Use Case: Logging In                                                                                                                                                                                                                                                        |
 | Preconditions   | User entered in their login details and hit the login button in the GUI                                                                                                                                                                                                     |
 | Postconditions  | The username was checked to see if there exists a user in the database. If not, return false. If true, the password was hashed and checked to see if it matches the hashed password listed in the database. If they match, true was returned. Otherwise, false was returned | 
-## Contract C10: Display Register Page
+## Contract C10: Search
+| Operation       | 	search(searchTerm: String, tags: String[], model: Model) : String                                           |
+|-----------------|--------------------------------------------------------------------------------------------------------------|
+| Cross Reference | 	Use Case: Searching for an Event                                                                            |
+| Preconditions 	 | 	User entered information into the search bar and pressed the search button                                  |
+| Postconditions  | 	The UI shifted to the search results page and events that match the search term were displayed on the page. |
+## Contract C11: Display Register Page
 | Operation       | displayRegisterPage() : String             |
 |-----------------|--------------------------------------------|
 | Cross Reference | Use Case: Creating an Account              |
 | Preconditions   | User hit the register button on any screen |
 | Postconditions  | The register UI was displayed              |
-## Contract C11: Create User
+## Contract C12: Create User
 | Operation       | createUser(email: String, username: String, password: String, model: Model) : String                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 |-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Cross Reference | Use Case: Creating an Account                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | Preconditions   | User entered in account info on the register UI page and pressed the register button                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | Postconditions  | The username is checked to see if it already exists in the database and the password is checked to see if it matches MVP requirements (15 letters, lowercase & uppercase letters, at least 1 number, at least one special characters). If a user already exists in the database with the username provided or the password did not comply with requirements, the user was taken to an error screen. Otherwise, the password was hashed, the user was added to the database, and the user is redirected back to the home screen | 
-## Contract C12: Start Purchase
+## Contract C13: Start Purchase
 | Operation       | startPurchase(evnetId : int, model: Model) : String                                                                                                                                                                                                                                    |
 |-----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Cross Reference | Use Case: Purchasing a Ticket, Abuse Case: Buying all of a tickets stock (Scalping)                                                                                                                                                                                                    |
 | Preconditions   | User clicked the buy now on the product page                                                                                                                                                                                                                                           |
 | Postconditions  | If the buy now button was clicked 5 times in the last 5 seconds (can be adjusted), return an error. If the user is not logged in, display the login screen. If event has no seats left, return an error. Otherwise, go to the purchase UI screen and add the event details to the page | 
-## Contract C13: Display Login Page
-| Operation       | displayLoginPage()                        |
+## Contract C14: Display Login Page
+| Operation       | displayLoginPage() : String               |
 |-----------------|-------------------------------------------|
 | Cross Reference | Use Case: Logging In                      |
 | Preconditions   | User pressed the login button on any page |
 | Postconditions  | The login UI page was displayed           | 
 
 # User, Event, Receipt, and PaymentInfo
-## Contract C14: Get Attribute
+## Contract C15: Get Attribute
 | Operation       | getAttribute()          |
 |-----------------|-------------------------|
 | Cross Reference | Use Case: All           |
@@ -90,7 +96,7 @@
 | Postconditions  | Attribute was returned  |
 
 # User, Event, and Receipt
-## Contract C15: Set Attribute
+## Contract C16: Set Attribute
 | Operation       | setAttribute(attribute: ObjectType)           |
 |-----------------|-----------------------------------------------|
 | Cross Reference | Use Case: All                                 |
@@ -98,7 +104,7 @@
 | Postconditions  | The old attribute was replaced with attribute |
 
 # Receipt
-## Contract C16: Build Receipt (Unused)
+## Contract C17: Build Receipt (Unused)
 | Operation       | buildReciept() : String                                            |
 |-----------------|--------------------------------------------------------------------|
 | Cross Reference | Use Cases: Purchasing a Ticket                                     |
@@ -106,137 +112,137 @@
 | Postconditions  | A string is created with all of the fields needed for a receipt    |
 
 # Service
-## Contract C17: Find User
+## Contract C18: Find User
 | Operation       | findUser(userId: int) : User              |
 |-----------------|-------------------------------------------|
 | Cross Reference | Use Cases: All                            |
 | Preconditions   | User with specified id is in the database |
 | Postconditions  | User with specified id was returned       |
-## Contract C18: Find Event
+## Contract C19: Find Event
 | Operation       | findEvent(eventId: int) : Event            |
 |-----------------|--------------------------------------------|
 | Cross Reference | Use Cases: All                             |
 | Preconditions   | Event with specified id is in the database |
 | Postconditions  | Event with specified id was returned       |
-## Contract C19: Save Event
+## Contract C20: Save Event
 | Operation       | saveEvent(event: Event)                           |
 |-----------------|---------------------------------------------------|
 | Cross Reference | Use Cases: All                                    |
 | Preconditions   | event is not null                                 |
 | Postconditions  | Event with specified id was saved to the database |
-## Contract C20: Delete By User ID
+## Contract C21: Delete By User ID
 | Operation       | deleteUserById(userId: int)                   |
 |-----------------|-----------------------------------------------|
 | Cross Reference | Test cases                                    |
 | Preconditions   | User with specified id is in the database     |
 | Postconditions  | User with specified id was removed from the database |
-## Contract C21: Find User by Username
+## Contract C22: Find User by Username
 | Operation       | findUser(username: String) : User               |
 |-----------------|-------------------------------------------------|
 | Cross Reference | Use Cases: All                                  |
 | Preconditions   | User with specified username is in the database |
 | Postconditions  | User with specified username was returned       |
-## Contract C22: Update Event
+## Contract C23: Update Event
 | Operation       | updateEvent(event: Event, eventId: int)                         |
 |-----------------|-----------------------------------------------------------------|
 | Cross Reference | Use Cases: Purchasing a Ticket                                  |
 | Preconditions   | Event with specified id is in the database                      |
 | Postconditions  | Event with specified id was replaced with event in the database |
-## Contract C23: Save User
+## Contract C24: Save User
 | Operation       | saveUser(user: User)                             |
 |-----------------|--------------------------------------------------|
 | Cross Reference | Use Cases: All                                   |
 | Preconditions   | user is not null                                 |
 | Postconditions  | User with specified id was saved to the database |
-## Contract C24: Delete Event By Id
+## Contract C25: Delete Event By Id
 | Operation       | deleteEventById(eventId: int)                         |
 |-----------------|-------------------------------------------------------|
 | Cross Reference | Test cases                                            |
 | Preconditions   | Event with specified id is in the database            |
 | Postconditions  | Event with specified id was removed from the database |
-## Contract C25: Find Events
+## Contract C26: Find Events
 | Operation       | findEvents(searchTerm: String, tags: String[]) : List<Event>                 |
 |-----------------|------------------------------------------------------------------------------|
 | Cross Reference | Searching for an event                                                       |
 | Preconditions   | Search term is not null                                                      |
 | Postconditions  | A list of events that are related to the search terms and tags were returned |
 # UserRepository
-## Contract C26: Find By User ID (Unused)
+## Contract C27: Find By User ID (Unused)
 | Operation       | findByUserID(userId: int) : User          |
 |-----------------|-------------------------------------------|
 | Cross Reference | None                                      |
 | Preconditions   | User with specified id is in the database |
 | Postconditions  | User with specified id was returned       |
-## Contract C27: Delete By Username (Unused)
-| Operation       | deleteUserById(username: String) : User                |
+## Contract C28: Delete By Username (Unused)
+| Operation       | deleteUserByUsername(username: String) : User          |
 |-----------------|--------------------------------------------------------|
 | Cross Reference | None                                                   |
 | Preconditions   | User with specified username is in the database        |
 | Postconditions  | User with specified user was removed from the database |
-## Contract C28: Find By Username
+## Contract C29: Find By Username
 | Operation       | findUser(username: String) : User               |
 |-----------------|-------------------------------------------------|
 | Cross Reference | Use Cases: All                                  |
 | Preconditions   | User with specified username is in the database |
 | Postconditions  | User with specified username was returned       |
 # EventRepository
-## Contract C29: Find By Event ID (Unused)
+## Contract C30: Find By Event ID (Unused)
 | Operation       | findEvent(eventId: int) : Event            |
 |-----------------|--------------------------------------------|
 | Cross Reference | Use Cases: All                             |
 | Preconditions   | Event with specified id is in the database |
 | Postconditions  | Event with specified id was returned       |
-## Contract C30: Search for Events
+## Contract C31: Search for Events
 | Operation       | findEventsByEventNameContainsIgnoreCaseOrDescriptionContainsIgnoreCaseOrDescriptionContainsIgnoreCaseOrderByEventName(name: String, description: String, tags: String) : List<Event> |
 |-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Cross Reference | Searching for an event                                                                                                                                                               |
 | Preconditions   | None                                                                                                                                                                                 |
 | Postconditions  | A list of events that are related to the name, description, and tags were returned                                                                                                   |
 # PaymentSystem
-## Contract C31: Sum Odd
+## Contract C32: Sum Odd
 | Operation       | sumodd(cnumber: long) : int               |
 |-----------------|-------------------------------------------|
 | Cross Reference | Use Cases: Purchase a Ticket              |
 | Preconditions   | none                                      |
 | Postconditions  | Return sum of odd-place digits in cnumber |
-## Contract C32: Prefix Match
+## Contract C33: Prefix Match
 | Operation       | prefixmatch(cnumber: long, d int) : boolean                                |
 |-----------------|----------------------------------------------------------------------------|
 | Cross Reference | Use Cases: Purchase a Ticket                                               |
 | Preconditions   | none                                                                       |
 | Postconditions  | Return true if the digit d is a prefix for cnumber. Otherwise return false |
-## Contract C33: Get Digit
+## Contract C34: Get Digit
 | Operation       | getDigit(cnumber: int) : int                                                             |
 |-----------------|------------------------------------------------------------------------------------------|
 | Cross Reference | Use Cases: Purchase a Ticket                                                             |
 | Preconditions   | none                                                                                     |
 | Postconditions  | Return this cnumber if it is a single digit, otherwise, return the sum of the two digits |
-## Contract C34: Get Prefix
+## Contract C35: Get Prefix
 | Operation       | getprefix(cnumber: int, k int) : long                                                                               |
 |-----------------|---------------------------------------------------------------------------------------------------------------------|
 | Cross Reference | Use Cases: Purchase a Ticket                                                                                        |
 | Preconditions   | none                                                                                                                |
 | Postconditions  | Return the first k number of digits from cnumber. If the number of digits in number is less than k, return cnumber. |
-## Contract C35: Number of Digits
+## Contract C36: Number of Digits
 | Operation       | thesize(d: long) : int           |
 |-----------------|----------------------------------|
 | Cross Reference | Use Cases: Purchase a Ticket     |
 | Preconditions   | none                             |
 | Postconditions  | Return the number of digits in d |
-## Contract C36: Check Payment
+## Contract C37: Check Payment
 | Operation       | checkPayment(paymentInfo: PaymentInfo) : boolean                                          |
 |-----------------|-------------------------------------------------------------------------------------------|
 | Cross Reference | Use Cases: Purchase a Ticket                                                              |
 | Preconditions   | paymentInfo is instantiated                                                               |
 | Postconditions  | Return true if the fields of paymentInfo are set to valid values. Otherwise, return false |
-## Contract C37: Sum Double Even
+## Contract C38: Sum Double Even
 | Operation       | sumdoubleeven(cnumber: long) : int                   |
 |-----------------|------------------------------------------------------|
 | Cross Reference | Use Cases: Purchase a Ticket                         |
 | Preconditions   | none                                                 |
 | Postconditions  | Return the sum of all even digits in cnumber doubled |
 # Csci360TeamProjectApplication
-## Contract C38: Main
+## Contract C39: Main
 | Operation       | main(args: String[])     |
 |-----------------|--------------------------|
 | Cross Reference | Use Cases: All           |
